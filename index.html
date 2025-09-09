@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refurb 360</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Attractive transition for partner logos on mobile */
+        @media (max-width: 575.98px) {
+            .partner-swiper .swiper-slide {
+                opacity: 0;
+                transform: scale(0.85);
+                animation: partnerLogoFadeIn 0.7s cubic-bezier(.4,0,.2,1) forwards;
+            }
+            .partner-swiper .swiper-slide:nth-child(1) { animation-delay: 0.1s; }
+            .partner-swiper .swiper-slide:nth-child(2) { animation-delay: 0.25s; }
+            .partner-swiper .swiper-slide:nth-child(3) { animation-delay: 0.4s; }
+            .partner-swiper .swiper-slide:nth-child(4) { animation-delay: 0.55s; }
+            .partner-swiper .swiper-slide:nth-child(5) { animation-delay: 0.7s; }
+        }
+        @keyframes partnerLogoFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.85) translateY(30px);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1.05) translateY(-6px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .section-animate {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+            will-change: opacity, transform;
+        }
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .feature-card, .testimonial-card, .faq-item, .drone-image, .partner-logo {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        .feature-card.visible, .testimonial-card.visible, .faq-item.visible, .drone-image.visible, .partner-logo.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        :root {
+            --marvel-red: #d42027;
+            --marvel-blue: #3a86ff;
+            --marvel-dark: #151515;
+            --marvel-gold: #f0c75e;
+            --marvel-light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .marvel-bg {
+            background-color: var(--marvel-dark);
+        }
+        
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled {
+            padding: 5px 0;
+            background-color: var(--marvel-dark) !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(21, 21, 21, 0.85), rgba(21, 21, 21, 0.9)), url('https://images.unsplash.com/photo-1516545595035-b494dd0161e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(135deg, transparent 0%, transparent 50%, var(--marvel-dark) 50%, var(--marvel-dark) 100%),
+                        linear-gradient(45deg, var(--marvel-dark) 0%, var(--marvel-dark) 50%, transparent 50%, transparent 100%);
+            background-size: 20px 20px;
+        }
+        
+        .btn-primary {
+            background-color: var(--marvel-red);
+            border-color: var(--marvel-red);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b31c22;
+            border-color: #b31c22;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 32, 39, 0.3);
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--marvel-red);
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--marvel-red);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--marvel-red);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+            border-left: 4px solid var(--marvel-red);
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(120deg, #1a2238 0%, #3a86ff 60%, #d42027 100%);
+            color: #fffbe9;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--marvel-gold);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25), 0 0 0 8px #fff3 inset;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 120%;
+            height: 60px;
+            background: repeating-linear-gradient(-12deg, var(--marvel-gold), var(--marvel-gold) 8px, transparent 8px, transparent 18px);
+            opacity: 0.18;
+            z-index: 1;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120%;
+            height: 60px;
+            background: repeating-linear-gradient(12deg, var(--marvel-gold), var(--marvel-gold) 8px, transparent 8px, transparent 18px);
+            opacity: 0.18;
+            z-index: 1;
+        }
+
+        .cta-section .row {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 10px #000, 0 0 8px #3a86ff, 0 0 12px var(--marvel-gold);
+            color: #fffbe9;
+        }
+
+        .cta-section .btn-light.btn-lg {
+            background: #fffbe9;
+            color: #d42027;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 0 18px 2px var(--marvel-gold), 0 2px 8px rgba(0,0,0,0.15);
+            border: 2px solid var(--marvel-gold);
+            transition: box-shadow 0.2s, transform 0.2s, color 0.2s, background 0.2s;
+        }
+        .cta-section .btn-light.btn-lg:hover {
+            background: var(--marvel-gold);
+            color: #1a2238;
+            box-shadow: 0 0 32px 8px var(--marvel-gold), 0 4px 16px rgba(0,0,0,0.18);
+            transform: scale(1.05) rotate(-2deg);
+        }
+        
+        footer {
+            background-color: var(--marvel-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--marvel-red);
+        }
+        
+        .marvel-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .partner-logo {
+            height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .faq-item {
+            border-left: 3px solid var(--marvel-red);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .drone-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .drone-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .marvel-comic-border {
+            border: 3px solid var(--marvel-red);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .marvel-comic-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--marvel-red);
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar .navbar-collapse {
+                background: var(--marvel-dark);
+                padding: 1rem;
+                border-radius: 0 0 10px 10px;
+            }
+            .navbar-nav .nav-link {
+                padding: 0.75rem 1rem;
+                text-align: left;
+                transition: color 0.2s, background 0.2s;
+            }
+            .navbar-nav .nav-link.active,
+            .navbar-nav .nav-link:focus,
+            .navbar-nav .nav-link:hover {
+                color: #fff;
+                background: linear-gradient(90deg, #d42027 0%, #3a86ff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                /* text-fill-color: transparent; */
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-shadow: 0 2px 12px #d42027cc, 0 1px 4px #3a86ff99;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            .hero-section .row {
+                flex-direction: column-reverse;
+            }
+            .hero-section img {
+                margin-bottom: 30px;
+                max-width: 80vw;
+                max-height: 250px;
+            }
+            .section-padding {
+                padding: 40px 0;
+            }
+            .feature-card, .testimonial-card {
+                padding: 18px;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .drone-image img {
+                max-width: 100%;
+                height: auto;
+            }
+            .partner-logo {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+            .hero-section h1,
+            .display-4 {
+                font-size: 1.3rem !important;
+            }
+            .hero-section p,
+            .lead {
+                font-size: 0.95rem !important;
+            }
+            .section-title {
+                font-size: 1.1rem !important;
+            }
+            .btn-primary, .btn-outline-light, .btn-light {
+                padding: 8px 12px;
+                font-size: 0.95rem;
+            }
+            .feature-icon {
+                font-size: 1.3rem;
+            }
+            .testimonial-img {
+                width: 38px;
+                height: 38px;
+            }
+            .faq-item h4 {
+                font-size: 0.98rem;
+            }
+            footer h4, footer h5 {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top marvel-bg">
+        <div class="container">
+            <a class="navbar-brand marvel-logo d-flex align-items-center gap-2" href="#" style="padding-top:2px;padding-bottom:2px;">
+                <img src="logo.png" alt="Refurb 360 Logo" style="height:36px;width:auto;display:inline-block;vertical-align:middle;margin-right:6px;margin-bottom:2px;box-shadow:0 1px 4px rgba(0,0,0,0.08);background:#fff;border-radius:4px;">
+                <span style="display:inline-block;vertical-align:middle;line-height:1;">REFURB<span class="text-danger">360</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section section-animate">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">REVIVE. REFLY. RECREATE.</h1>
+                    <p class="lead mb-4">From drones to action cams — we keep your vision alive.</p>
+                    <p class="mb-4">Your premier destination for drone sales, repair, and aerial services with the power and reliability of a Marvel superhero.</p>
+                    <a href="#contact" class="btn btn-primary me-3">Get Started</a>
+                    <a href="#services" class="btn btn-outline-light">Our Services</a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1090&q=80" class="img-fluid drone-image" alt="Drone Hero Image" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="section-padding bg-light section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Partners</h2>
+                <p class="lead">We collaborate with industry leaders to bring you the best products and services</p>
+            </div>
+            <div class="row mt-5 align-items-center justify-content-center">
+                <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
+                    <img src="https://logos-download.com/wp-content/uploads/2021/01/DJI_Logo-700x162.png" class="img-fluid partner-logo" alt="DJI Logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/GoPro_Logo.svg/2560px-GoPro_Logo.svg.png" class="img-fluid partner-logo" alt="GoPro Logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Insta360_logo.png/800px-Insta360_logo.png" class="img-fluid partner-logo" alt="Insta360 Logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Parrot_S.A..svg/1200px-Parrot_S.A..svg.png" class="img-fluid partner-logo" alt="Parrot Logo">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Autel_Robotics_logo.png/800px-Autel_Robotics_logo.png" class="img-fluid partner-logo" alt="Autel Robotics Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Services</h2>
+                <p class="lead">Comprehensive drone and camera solutions for all your needs</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Sales</h3>
+                        <p>New & certified refurbished DJI drones, GoPro & Insta360 cameras, and all necessary accessories including batteries, gimbals, mounts, and filters.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Repairs & Refurbishment</h3>
+                        <p>Expert DJI drone diagnostics, repair, & tuning. GoPro/Insta360 camera repair (lens, battery, firmware) and gimbal & stabilizer repair services.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>Aerial & Visual Services</h3>
+                        <p>Aerial photography & cinematography, mapping, surveying, inspection services, and adventure & sports action footage setups.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">View Portfolio</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Training & Compliance</h3>
+                        <p>Drone flying lessons, DGCA licensing assistance, and safe handling workshops for action cameras & drones.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Explore Courses</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Equipment Rental</h3>
+                        <p>Rent high-end drones and camera equipment for your projects without the commitment of purchasing.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Rental Options</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Custom Solutions</h3>
+                        <p>Tailored drone and camera solutions for specific industry needs including agriculture, construction, and event coverage.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-light section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Gallery</h2>
+                <p class="lead">See the world from a new perspective with our drone photography</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="img-fluid" alt="Aerial landscape">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="https://images.unsplash.com/photo-1593118247619-e2d6f056869e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="img-fluid" alt="Drone flat lay">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="lead">Get answers to common questions about our products and services</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                    Do you sell both new and refurbished products?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Yes — we provide brand-new units as well as professionally refurbished DJI drones, GoPros, and Insta360 cameras.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                    Do repairs affect warranty?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">We use genuine parts and provide our own service warranty on all repairs.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                    How long does a typical camera or drone repair take?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Usually 3–7 days depending on parts availability and complexity.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                    Do you offer accessories too?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Yes — from drone propellers to GoPro mounts and Insta360 invisible selfie sticks, we stock everything you need.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                    Can you help me decide which device suits my needs?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Definitely — our team helps match the best drone or action camera for your purpose and budget.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section-animate">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Ready to Elevate Your Perspective?</h2>
+                    <p class="lead mb-0">Contact us today for a free consultation and let's discuss how our drone solutions can help you achieve your goals.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#contact" class="btn btn-light btn-lg">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="lead">Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select class="form-select" id="service">
+                                <option selected>Select a service</option>
+                                <option value="sales">Drone/Camera Sales</option>
+                                <option value="repairs">Repair Services</option>
+                                <option value="aerial">Aerial Services</option>
+                                <option value="training">Training & Certification</option>
+                                <option value="rental">Equipment Rental</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-animate">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>REFURB <span class="text-danger">360</span></h4>
+                    <p>From drones to action cams — we keep your vision alive.</p>
+                    <p class="mb-1"><i class="fas fa-quote-left me-2"></i> Revive. Refly. Recreate.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@refurb360?si=Kkun47FCqJHCPcDD"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li><a href="#partners" class="text-white text-decoration-none">Partners</a></li>
+                        <li><a href="#gallery" class="text-white text-decoration-none">Gallery</a></li>
+                        <li><a href="#faq" class="text-white text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Drone Sales</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Camera Repair</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Aerial Photography</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Drone Training</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Equipment Rental</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-map-marker-alt mt-1"></i>
+                                </span>
+                                <span>
+                                    No.31 2nd Floor, MM Building,<br>
+                                    Dr Rajendra Prasad Rd,<br>
+                                    Gandhipuram, Coimbatore,<br>
+                                    Tamil Nadu 641012
+                                </span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-phone mt-1"></i>
+                                </span>
+                                <span><a href="tel:+919597497474" class="text-white text-decoration-none">+91 95974 97474</a></span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-envelope mt-1"></i>
+                                </span>
+                                <span><a href="mailto:Services.refurb360@gmail.com" class="text-white text-decoration-none" style="word-break: break-all;">Services.refurb360@gmail.com</a></span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-clock mt-1"></i>
+                                </span>
+                                <span>Mon-Sat: 9AM - 6PM</span>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 REFURB 360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links & close mobile menu on click
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                // Only scroll if anchor is on this page
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // Collapse navbar if open (for mobile)
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Dynamic nav active state based on scroll position
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+        const sections = Array.from(navLinks)
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        function setActiveNav() {
+            let scrollPos = window.scrollY + 80; // offset for navbar
+            let currentSection = sections[0];
+            for (let section of sections) {
+                if (section.offsetTop <= scrollPos) {
+                    currentSection = section;
+                }
+            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                link.style.color = '';
+                if (currentSection && link.getAttribute('href') === '#' + currentSection.id) {
+                    link.classList.add('active');
+                    link.style.color = '#fff';
+                }
+            });
+        }
+        window.addEventListener('scroll', setActiveNav);
+        window.addEventListener('DOMContentLoaded', setActiveNav);
+    </script>
+    <script>
+        // Section and div smooth transition on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.section-animate').forEach(el => observer.observe(el));
+            document.querySelectorAll('.feature-card, .testimonial-card, .faq-item, .drone-image, .partner-logo').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
