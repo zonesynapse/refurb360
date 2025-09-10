@@ -360,8 +360,28 @@
                 font-size: 1.7rem;
             }
             .drone-image img {
-                max-width: 100%;
-                height: auto;
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+                object-position: center;
+                display: block;
+        /* Fade-in effect for our gallery images */
+        .our-gallery-hidden, .client-gallery-hidden, .gallery-hidden {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: scale(1.04) translateY(-40px);
+            transition:
+                opacity 1.2s cubic-bezier(.22,1,.36,1),
+                max-height 1.2s cubic-bezier(.22,1,.36,1),
+                transform 1.2s cubic-bezier(.22,1,.36,1);
+        }
+        .our-gallery-hidden.visible, .client-gallery-hidden.visible, .gallery-hidden.visible {
+            display: block !important;
+            opacity: 1;
+            max-height: 600px;
+            transform: scale(1) translateY(0);
+        }
             }
             .partner-logo {
                 height: 40px;
@@ -445,7 +465,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">REVIVE. REFLY. RECREATE.</h1>
+                    <h1 class="display-4 fw-bold mb-4">REVIVE<span class="text-danger">!</span> REFLY<span class="text-danger">!</span> RECREATE<span class="text-danger">!</span></h1>
                     <p class="lead mb-4">From drones to action cams — we keep your vision alive.</p>
                     <p class="mb-4">Your premier destination for drone sales, repair, and aerial services with the power and reliability of a Marvel superhero.</p>
                     <a href="#contact" class="btn btn-primary me-3">Get Started</a>
@@ -467,19 +487,16 @@
             </div>
             <div class="row mt-5 align-items-center justify-content-center">
                 <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
-                    <img src="https://logos-download.com/wp-content/uploads/2021/01/DJI_Logo-700x162.png" class="img-fluid partner-logo" alt="DJI Logo">
+                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="img-fluid partner-logo" alt="DJI Logo">
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/GoPro_Logo.svg/2560px-GoPro_Logo.svg.png" class="img-fluid partner-logo" alt="GoPro Logo">
+                    <img src="tie-up logo/gopro-seeklogo.svg" class="img-fluid partner-logo" alt="GoPro Logo">
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Insta360_logo.png/800px-Insta360_logo.png" class="img-fluid partner-logo" alt="Insta360 Logo">
+                    <img src="tie-up logo/Insta360_logo_(transparent).svg.png" class="img-fluid partner-logo" alt="Insta360 Logo">
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Parrot_S.A..svg/1200px-Parrot_S.A..svg.png" class="img-fluid partner-logo" alt="Parrot Logo">
-                </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Autel_Robotics_logo.png/800px-Autel_Robotics_logo.png" class="img-fluid partner-logo" alt="Autel Robotics Logo">
+                    <img src="tie-up logo/Autel Robotics_ideDorDEhh_1.svg" class="img-fluid partner-logo" alt="Autel Robotics Logo">
                 </div>
             </div>
         </div>
@@ -510,7 +527,7 @@
                         </div>
                         <h3>Repairs & Refurbishment</h3>
                         <p>Expert DJI drone diagnostics, repair, & tuning. GoPro/Insta360 camera repair (lens, battery, firmware) and gimbal & stabilizer repair services.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                        <a href="#contact" class="btn btn-sm btn-outline-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -520,7 +537,7 @@
                         </div>
                         <h3>Aerial & Visual Services</h3>
                         <p>Aerial photography & cinematography, mapping, surveying, inspection services, and adventure & sports action footage setups.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">View Portfolio</a>
+                        <a href="#gallery" class="btn btn-sm btn-outline-primary">View Portfolio</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -561,31 +578,233 @@
     <section id="gallery" class="section-padding bg-light section-animate">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-title">Our Gallery</h2>
+                <h2 class="section-title">our Gallery</h2>
                 <p class="lead">See the world from a new perspective with our drone photography</p>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" id="our-gallery-row">
                 <div class="col-md-4 mb-4">
                     <div class="drone-image">
-                        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="img-fluid" alt="Aerial landscape">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM.jpeg" class="img-fluid" alt="Aerial landscape">
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="drone-image">
-                        <img src="https://images.unsplash.com/photo-1593118247619-e2d6f056869e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="img-fluid" alt="Drone flat lay">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(1).jpeg" class="img-fluid" alt="Drone flat lay">
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="drone-image">
-                        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="img-fluid" alt="Action shot">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(3).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(2).jpeg" class="img-fluid" alt="Action shot">
                     </div>
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">View Full Gallery</a>
+                <a href="#" class="btn btn-primary" id="view-full-our-gallery-btn">View Full Gallery</a>
+                <a href="#" class="btn btn-primary" id="show-less-our-gallery-btn" style="display:none;">Show Less</a>
+            </div>
+        </div>
+    <script>
+    // View Full Our Gallery functionality with Show Less toggle (only for our gallery)
+    document.addEventListener('DOMContentLoaded', function() {
+        var viewBtn = document.getElementById('view-full-our-gallery-btn');
+        var lessBtn = document.getElementById('show-less-our-gallery-btn');
+        var hiddenSelector = '#our-gallery-row .our-gallery-hidden';
+        var firstImage = document.querySelector('#our-gallery-row .col-md-4.mb-4');
+
+        if (viewBtn && lessBtn) {
+            viewBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll(hiddenSelector).forEach(function(el) {
+                    el.style.display = '';
+                    el.classList.remove('visible');
+                    void el.offsetWidth; // force reflow for transition
+                    el.classList.add('visible');
+                });
+                viewBtn.style.display = 'none';
+                lessBtn.style.display = '';
+            });
+            lessBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var images = Array.from(document.querySelectorAll(hiddenSelector));
+                var transitioned = 0;
+                images.forEach(function(el) {
+                    el.classList.remove('visible');
+                    el.removeEventListener('transitionend', el._onTransitionEndGallery);
+                    var onTransitionEnd = function(event) {
+                        if (event.propertyName === 'opacity') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    };
+                    el._onTransitionEndGallery = onTransitionEnd;
+                    el.addEventListener('transitionend', onTransitionEnd);
+                    // Fallback: if transitionend doesn't fire, force hide after 1.3s
+                    setTimeout(function() {
+                        if (el.style.display !== 'none') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    }, 60);
+                });
+                viewBtn.style.display = '';
+                lessBtn.style.display = 'none';
+            });
+        }
+    });
+    </script>
+    </section>
+    <!-- client Gallery Section -->
+    <section id="client-gallery" class="section-padding bg-light section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Client Gallery</h2>
+                <p class="lead">See the world from a new perspective with our drone photography</p>
+            </div>
+            <div class="row mt-5" id="client-gallery-row">
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM.jpeg" class="img-fluid" alt="Aerial landscape">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM(1).jpeg" class="img-fluid" alt="Drone flat lay">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.57 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM(1).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.00 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM(1).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.02 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary" id="view-full-client-gallery-btn">View Full Gallery</a>
+                <a href="#" class="btn btn-primary" id="show-less-client-gallery-btn" style="display:none;">Show Less</a>
             </div>
         </div>
     </section>
+    <script>
+    // View Full Client Gallery functionality with Show Less toggle and fade-in effect
+    document.addEventListener('DOMContentLoaded', function() {
+        var viewBtn = document.getElementById('view-full-client-gallery-btn');
+        var lessBtn = document.getElementById('show-less-client-gallery-btn');
+        var hiddenSelector = '#client-gallery-row .gallery-hidden, #client-gallery-row .client-gallery-hidden';
+        var firstImage = document.querySelector('#client-gallery-row .col-md-4.mb-4');
+
+        if (viewBtn && lessBtn) {
+            viewBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll(hiddenSelector).forEach(function(el) {
+                    el.style.display = '';
+                    el.classList.remove('visible');
+                    void el.offsetWidth; // force reflow for transition
+                    el.classList.add('visible');
+                });
+                viewBtn.style.display = 'none';
+                lessBtn.style.display = '';
+            });
+            lessBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var images = Array.from(document.querySelectorAll(hiddenSelector));
+                var transitioned = 0;
+                images.forEach(function(el) {
+                    el.classList.remove('visible');
+                    el.removeEventListener('transitionend', el._onTransitionEndGallery);
+                    var onTransitionEnd = function(event) {
+                        if (event.propertyName === 'opacity') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    };
+                    el._onTransitionEndGallery = onTransitionEnd;
+                    el.addEventListener('transitionend', onTransitionEnd);
+                    // Fallback: if transitionend doesn't fire, force hide after 1.3s
+                    setTimeout(function() {
+                        if (el.style.display !== 'none') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    }, 60);
+                });
+                viewBtn.style.display = '';
+                lessBtn.style.display = 'none';
+            });
+        }
+    });
+    </script>
 
     <!-- FAQ Section -->
     <section id="faq" class="section-padding section-animate">
@@ -722,7 +941,7 @@
                 <div class="col-lg-4 mb-4">
                     <h4>REFURB <span class="text-danger">360</span></h4>
                     <p>From drones to action cams — we keep your vision alive.</p>
-                    <p class="mb-1"><i class="fas fa-quote-left me-2"></i> Revive. Refly. Recreate.</p>
+                    <p class="mb-1"><i class="fas fa-quote-left me-2"></i> Revive<span class="text-danger">!</span> Refly<span class="text-danger">!</span> Recreate<span class="text-danger">!</span></p>
                     <div class="social-icons mt-3">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -758,10 +977,12 @@
                                     <i class="fas fa-map-marker-alt mt-1"></i>
                                 </span>
                                 <span>
-                                    No.31 2nd Floor, MM Building,<br>
-                                    Dr Rajendra Prasad Rd,<br>
-                                    Gandhipuram, Coimbatore,<br>
-                                    Tamil Nadu 641012
+                                    <a href="https://maps.app.goo.gl/yEki6YgsWoJYa3Aq6" target="_blank" rel="noopener" class="text-white text-decoration-none" style="font-size:1.05rem;line-height:1.5;display:inline-block;">
+                                        No.31 2nd Floor, MM Building,<br>
+                                        Dr Rajendra Prasad Rd,<br>
+                                        Gandhipuram, Coimbatore,<br>
+                                        Tamil Nadu 641012
+                                    </a>
                                 </span>
                             </li>
                             <li style="display: flex; align-items: flex-start;">
@@ -788,6 +1009,9 @@
             <hr class="mt-4 mb-4">
             <div class="text-center">
                 <p class="mb-0">&copy; 2023 REFURB 360. All rights reserved.</p>
+                                <div style="font-size: 0.7rem; color: #bbb; margin-top: 2px;">
+                                    <a href="https://zonesynapse.github.io/" target="_blank" rel="noopener" style="color: #bbb; text-decoration: underline dotted;">Made by Zonesynapse</a>
+                                </div>
             </div>
         </div>
     </footer>
