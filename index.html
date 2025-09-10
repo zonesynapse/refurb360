@@ -16,20 +16,24 @@
                 flex-direction: row !important;
                 flex-wrap: nowrap !important;
                 overflow-x: auto !important;
-                gap: 18px !important;
+                gap: 62px !important;
                 -webkit-overflow-scrolling: touch;
                 padding-bottom: 8px;
+                justify-content: flex-start !important;
             }
             .partners-row > div {
-                min-width: 110px !important;
-                flex: 0 0 110px !important;
+                flex: 0 0 auto !important;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                min-width: unset !important;
+                width: 90px !important;
+                padding: 0;
             }
             .partner-logo {
-                height: 48px;
-                max-width: 90px;
+                height: 40px;
+                width: auto;
+                max-width: 80px;
             }
         }
         @keyframes partnerLogoFadeIn {
