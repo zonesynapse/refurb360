@@ -354,6 +354,21 @@
                 text-shadow: 0 2px 12px #d42027cc, 0 1px 4px #3a86ff99;
             }
         }
+        a[href*="wa.me"]:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  }
+
+  /* Optional bounce animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  a[href*="wa.me"] {
+    animation: bounce 2s infinite;
+  }
+
 
         @media (max-width: 768px) {
             .hero-section {
@@ -942,6 +957,16 @@
             </div>
         </div>
     </section>
+    <!-- WhatsApp section -->
+<a href="https://wa.me/919597497474" target="_blank" 
+   style="position: fixed; bottom: 20px; right: 20px; 
+          background-color: #d42027; color: rgb(255, 255, 255); 
+          border-radius: 50%; width: 60px; height: 60px; 
+          display: flex; align-items: center; justify-content: center; 
+          box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;">
+  <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+</a>
 
     <!-- Footer -->
     <footer class="section-animate">
