@@ -14,12 +14,12 @@
             .partners-row {
                 display: flex !important;
                 flex-direction: row !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                gap: 62px !important;
-                -webkit-overflow-scrolling: touch;
+                flex-wrap: wrap !important;
+                overflow-x: unset !important;
+                gap: 32px !important;
+                -webkit-overflow-scrolling: unset;
                 padding-bottom: 8px;
-                justify-content: flex-start !important;
+                justify-content: center !important;
             }
             .partners-row > div {
                 flex: 0 0 auto !important;
@@ -29,6 +29,7 @@
                 min-width: unset !important;
                 width: 90px !important;
                 padding: 0;
+                margin-right: 0 !important;
             }
             .partner-logo {
                 height: 40px;
@@ -354,21 +355,6 @@
                 text-shadow: 0 2px 12px #d42027cc, 0 1px 4px #3a86ff99;
             }
         }
-        a[href*="wa.me"]:hover {
-    transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-  }
-
-  /* Optional bounce animation */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  a[href*="wa.me"] {
-    animation: bounce 2s infinite;
-  }
-
 
         @media (max-width: 768px) {
             .hero-section {
@@ -445,6 +431,72 @@
                 font-size: 0.98rem;
             }
         }
+        .partner-gallery-scroll {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE 10+ */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+            overflow-x: auto;
+            padding: 12px 0 18px 0;
+        }
+        .partner-gallery-scroll::-webkit-scrollbar {
+            display: none; /* Chrome/Safari/Webkit */
+        }
+        .partner-gallery-scroll img {
+            height: 140px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin: 0 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            background: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .partner-gallery-scroll img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+        }
+        @media (max-width: 575.98px) {
+            .partner-gallery-scroll img {
+                height: 80px !important;
+                max-width: 120px !important;
+                margin: 0 6px !important;
+                border-radius: 7px !important;
+            }
+        }
+
+        /* Responsive width for each partner logo gallery item */
+        .partner-logo-gallery-item {
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+            padding-right: 0;
+            box-sizing: border-box;
+        }
+        @media (max-width: 991.98px) {
+            .partner-logo-gallery-item {
+                max-width: 700px;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .partner-logo-gallery-item {
+                max-width: 98vw;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .partner-logo-gallery-item {
+                max-width: 99vw;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -509,22 +561,71 @@
                 <h2 class="section-title">Our Partners</h2>
                 <p class="lead">We collaborate with industry leaders to bring you the best products and services</p>
             </div>
-            <div class="partners-row d-flex flex-row align-items-center justify-content-center flex-nowrap" style="gap: 18px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
-                <div class="text-center" style="min-width: 90px;">
-                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="img-fluid partner-logo" alt="DJI Logo">
+            <div class="partner-logo-gallery-list" style="display: flex; flex-direction: column; gap: 48px; align-items: center;">
+                <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="partner-logo mb-2" alt="DJI Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/portfolio/app-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 1">
+                        <img src="assets/img/portfolio/app-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 2">
+                        <img src="assets/img/portfolio/app-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 3">
+                        <img src="assets/img/portfolio/branding-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 4">
+                        <img src="assets/img/portfolio/branding-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 5">
+                        <img src="assets/img/portfolio/branding-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 6">
+                        <img src="assets/img/portfolio/books-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 7">
+                        <img src="assets/img/portfolio/books-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 8">
+                        <img src="assets/img/portfolio/books-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 9">
+                        <img src="assets/img/portfolio/product-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="DJI 10">
+                    </div>
                 </div>
-                <div class="text-center" style="min-width: 90px;">
-                    <img src="tie-up logo/gopro-seeklogo.svg" class="img-fluid partner-logo" alt="GoPro Logo">
+                <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/gopro-seeklogo.svg" class="partner-logo mb-2" alt="GoPro Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/portfolio/product-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 1">
+                        <img src="assets/img/portfolio/product-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 2">
+                        <img src="assets/img/portfolio/app-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 3">
+                        <img src="assets/img/portfolio/app-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 4">
+                        <img src="assets/img/portfolio/app-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 5">
+                        <img src="assets/img/portfolio/branding-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 6">
+                        <img src="assets/img/portfolio/branding-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 7">
+                        <img src="assets/img/portfolio/branding-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 8">
+                        <img src="assets/img/portfolio/books-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 9">
+                        <img src="assets/img/portfolio/books-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="GoPro 10">
+                    </div>
                 </div>
-                <div class="text-center" style="min-width: 90px;">
-                    <img src="tie-up logo/Insta360_logo_(transparent).svg.png" class="img-fluid partner-logo" alt="Insta360 Logo">
+                <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/Insta360_logo_(transparent).svg.png" class="partner-logo mb-2" alt="Insta360 Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/portfolio/books-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 1">
+                        <img src="assets/img/portfolio/product-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 2">
+                        <img src="assets/img/portfolio/product-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 3">
+                        <img src="assets/img/portfolio/product-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 4">
+                        <img src="assets/img/portfolio/app-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 5">
+                        <img src="assets/img/portfolio/app-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 6">
+                        <img src="assets/img/portfolio/app-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 7">
+                        <img src="assets/img/portfolio/branding-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 8">
+                        <img src="assets/img/portfolio/branding-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 9">
+                        <img src="assets/img/portfolio/branding-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Insta360 10">
+                    </div>
                 </div>
-                <div class="text-center" style="min-width: 90px;">
-                    <img src="tie-up logo/Autel Robotics_ideDorDEhh_1.svg" class="img-fluid partner-logo" alt="Autel Robotics Logo">
+                <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/Autel Robotics_ideDorDEhh_1.svg" class="partner-logo mb-2" alt="Autel Robotics Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/portfolio/app-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 1">
+                        <img src="assets/img/portfolio/app-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 2">
+                        <img src="assets/img/portfolio/app-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 3">
+                        <img src="assets/img/portfolio/books-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 4">
+                        <img src="assets/img/portfolio/books-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 5">
+                        <img src="assets/img/portfolio/books-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 6">
+                        <img src="assets/img/portfolio/branding-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 7">
+                        <img src="assets/img/portfolio/branding-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 8">
+                        <img src="assets/img/portfolio/branding-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 9">
+                        <img src="assets/img/portfolio/product-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;" alt="Autel 10">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <script src="partner-gallery.js"></script>
 
     <!-- Services Section -->
     <section id="services" class="section-padding section-animate">
@@ -957,16 +1058,6 @@
             </div>
         </div>
     </section>
-    <!-- WhatsApp section -->
-<a href="https://wa.me/919597497474" target="_blank" 
-   style="position: fixed; bottom: 20px; right: 20px; 
-          background-color: #d42027; color: rgb(255, 255, 255); 
-          border-radius: 50%; width: 60px; height: 60px; 
-          display: flex; align-items: center; justify-content: center; 
-          box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-  <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
-</a>
 
     <!-- Footer -->
     <footer class="section-animate">
