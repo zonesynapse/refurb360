@@ -9,6 +9,21 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* WhatsApp Floating Button (gallery only) */
+      a[href*="wa.me"]:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  }
+
+  /* Optional bounce animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  a[href*="wa.me"] {
+    animation: bounce 2s infinite;
+  }
         /* Attractive transition for partner logos on mobile */
         @media (max-width: 575.98px) {
             .partners-row {
@@ -806,10 +821,12 @@
         }
     });
     </script>
+</body>
+</html>
     </section>
     <!-- client Gallery Section -->
     <section id="client-gallery" class="section-padding bg-light section-animate">
-        <div class="container">
+    <div class="container" style="position:relative;">
             <div class="text-center">
                 <h2 class="section-title">Client Gallery</h2>
                 <p class="lead">See the world from a new perspective with our drone photography</p>
@@ -867,7 +884,20 @@
             </div>
         </div>
     </section>
-    <script>
+        <script>
+        // Show WhatsApp icon only when gallery section is visible
+        document.addEventListener('DOMContentLoaded', function() {
+            var whatsappBtn = document.querySelector('.whatsapp-float');
+            var gallerySection = document.getElementById('gallery');
+            function checkGalleryVisible() {
+                var rect = gallerySection.getBoundingClientRect();
+                var inView = rect.bottom > 0 && rect.top < window.innerHeight;
+                whatsappBtn.style.display = inView ? 'flex' : 'none';
+            }
+            checkGalleryVisible();
+            window.addEventListener('scroll', checkGalleryVisible);
+            window.addEventListener('resize', checkGalleryVisible);
+        });
     // View Full Client Gallery functionality with Show Less toggle and fade-in effect
     document.addEventListener('DOMContentLoaded', function() {
         var viewBtn = document.getElementById('view-full-client-gallery-btn');
@@ -1058,7 +1088,17 @@
             </div>
         </div>
     </section>
-
+    <!-- WhatsApp section -->
+<a href="https://wa.me/919597497474" target="_blank" 
+     style="position: fixed; bottom: 20px; right: 20px; 
+                    background-color: #d42027; color: #fff; 
+                    border-radius: 50%; width: 60px; height: 60px; 
+                    display: flex; align-items: center; justify-content: center; 
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    text-decoration: none; border: none;">
+    <i class="fab fa-whatsapp" style="font-size: 30px; text-decoration: none; border: none;"></i>
+</a>
     <!-- Footer -->
     <footer class="section-animate">
         <div class="container">
