@@ -10,6 +10,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* WhatsApp Floating Button (gallery only) */
+        /* Responsive Coming Soon Modal */
+        #launchModal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #launchModal .launch-modal-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            max-width: 100vw;
+        }
+        @media (max-width: 767.98px) {
+            #launchLeftImg {
+                width: 100vw !important;
+                max-width: 100vw !important;
+                height: auto !important;
+                max-height: 50vh !important;
+                object-fit: contain !important;
+                display: block;
+                margin: 0 auto 0 auto !important;
+                background: #222;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+            }
+            #launchModal .launch-modal-content {
+                background: transparent !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+            }
+            #launchModal {
+                overflow-y: auto !important;
+                max-height: 100vh !important;
+            }
+            #launchModal .launch-modal-content {
+                flex-direction: column;
+                gap: 0;
+                width: 100vw;
+                max-width: 100vw;
+                padding: 0 !important;
+                align-items: center;
+                justify-content: center;
+            }
+            #launchModal img {
+                width: 100%;
+                max-width: 95vw !important;
+                height: auto !important;
+                max-height: 40vh !important;
+                object-fit: contain !important;
+                display: block;
+                margin: 0 auto 10px auto !important;
+
+            }
+            #launchModal .launch-modal-content {
+                padding: 12px 0;
+            }
+            #launchModal div[style*="padding:0 32px"] {
+                padding: 0 8px !important;
+            }
+        }
       a[href*="wa.me"]:hover {
     transform: scale(1.1) rotate(-5deg);
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
@@ -517,17 +579,17 @@
 </head>
 <body>
         <!-- Coming Soon Launch Modal -->
-        <div id="launchModal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:rgba(21,21,21,0.98);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.6s;">
+        <div id="launchModal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:rgba(21,21,21,0.98);transition:opacity 0.6s;">
             <div style="position:absolute;top:32px;right:48px;z-index:10001;">
                 <span id="launchModalClose" style="font-size:2.5rem;color:#fff;cursor:pointer;font-weight:bold;user-select:none;background:rgba(0,0,0,0.2);border-radius:50%;padding:8px 18px;transition:background 0.2s;">&times;</span>
             </div>
-            <div style="display:flex;align-items:center;justify-content:center;width:100vw;max-width:100vw;">
-                <img src="assets/img/comming soon/comming soon1.jpeg" alt="Coming Soon Left" id="launchLeftImg" style="height:320px;max-width:40vw;object-fit:cover;box-shadow:0 8px 32px rgba(0,0,0,0.4);border-radius:18px;transform:translateX(-120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
+            <div class="launch-modal-content">
+                <img src="assets/img/comming soon/comming soon1.jpeg" alt="Coming Soon Left" id="launchLeftImg" style="max-width:400px;width:100%;height:auto;object-fit:contain;box-shadow:0 8px 32px rgba(0,0,0,0.4);border-radius:18px;transform:translateX(-120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
                 <div style="padding:0 32px;text-align:center;">
                     <h1 style="color:#fffbe9;font-size:2.8rem;font-family:'Bebas Neue',cursive;letter-spacing:2px;text-shadow:0 2px 18px #d42027,0 0 8px #3a86ff,0 0 12px #f0c75e;">COMING SOON</h1>
                     <p style="color:#fffbe9;font-size:1.3rem;margin-top:18px;letter-spacing:1px;">Get ready for something <span style="color:#d42027;font-weight:bold;">exciting</span>!<br>Launching our new product soon.</p>
                 </div>
-                <img src="assets/img/comming soon/comming soon2.jpeg" alt="Coming Soon Right" id="launchRightImg" style="height:320px;max-width:40vw;object-fit:cover;box-shadow:0 8px 32px rgba(0,0,0,0.4);border-radius:18px;transform:translateX(120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
+                <img src="assets/img/comming soon/comming soon2.jpeg" alt="Coming Soon Right" id="launchRightImg" style="max-width:400px;width:100%;height:auto;object-fit:contain;transform:translateX(120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
             </div>
         </div>
         <script>
