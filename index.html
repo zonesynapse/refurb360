@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refurb 360</title>
+    <title>Refurb 360 — Drone Sales, Repairs, Aerial Photography & Refurbishment</title>
+    <meta name="description" content="Refurb 360 — sales, repair, refurbishment and aerial services for DJI drones, GoPro & Insta360 cameras. Trusted partner for rentals, training and professional drone solutions.">
+    <meta name="keywords" content="drone sales, drone repair, DJI service, GoPro repair, Insta360, aerial photography, drone rental, drone training, drone refurbishment">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://yourdomain.example.com/refurb.html">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Refurb 360 — Drone Sales, Repairs & Aerial Services">
+    <meta property="og:description" content="Sales, refurbishment and professional aerial services for drones and action cameras. Contact Refurb 360 for repairs, rentals, training and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.example.com/refurb.html">
+    <meta property="og:image" content="https://yourdomain.example.com/assets/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Refurb 360 — Drone Sales, Repairs & Aerial Services">
+    <meta name="twitter:description" content="Sales, refurbishment and professional aerial services for drones and action cameras.">
+    <meta name="twitter:image" content="https://yourdomain.example.com/assets/hero-bg.jpg">
+    <meta name="author" content="Refurb 360">
+    <meta name="theme-color" content="#151515">
+    <link rel="alternate" href="https://yourdomain.example.com/refurb.html" hreflang="en">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -25,6 +43,7 @@
             max-width: 100vw;
         }
         @media (max-width: 767.98px) {
+            /* Match refurb1.html: make the modal images full-bleed and mobile-friendly */
             #launchLeftImg {
                 width: 100vw !important;
                 max-width: 100vw !important;
@@ -41,17 +60,10 @@
                 background: transparent !important;
                 border-radius: 0 !important;
                 padding: 0 !important;
-            }
-            #launchModal {
-                overflow-y: auto !important;
-                max-height: 100vh !important;
-            }
-            #launchModal .launch-modal-content {
                 flex-direction: column;
                 gap: 0;
                 width: 100vw;
                 max-width: 100vw;
-                padding: 0 !important;
                 align-items: center;
                 justify-content: center;
             }
@@ -63,13 +75,16 @@
                 object-fit: contain !important;
                 display: block;
                 margin: 0 auto 10px auto !important;
-
             }
             #launchModal .launch-modal-content {
                 padding: 12px 0;
             }
             #launchModal div[style*="padding:0 32px"] {
                 padding: 0 8px !important;
+            }
+            #launchModal {
+                overflow-y: auto !important;
+                max-height: 100vh !important;
             }
         }
       a[href*="wa.me"]:hover {
@@ -589,7 +604,7 @@
                     <h1 style="color:#fffbe9;font-size:2.8rem;font-family:'Bebas Neue',cursive;letter-spacing:2px;text-shadow:0 2px 18px #d42027,0 0 8px #3a86ff,0 0 12px #f0c75e;">COMING SOON</h1>
                     <p style="color:#fffbe9;font-size:1.3rem;margin-top:18px;letter-spacing:1px;">Get ready for something <span style="color:#d42027;font-weight:bold;">exciting</span>!<br>Launching our new product soon.</p>
                 </div>
-                <img src="assets/img/comming soon/comming soon2.jpeg" alt="Coming Soon Right" id="launchRightImg" style="max-width:400px;width:100%;height:auto;object-fit:contain;transform:translateX(120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
+                <img src="assets/img/comming soon/comming soon2.jpeg" alt="Coming Soon Right" id="launchRightImg" style="max-width:400px;width:100%;height:auto;object-fit:contain;box-shadow:0 8px 32px rgba(0,0,0,0.4);border-radius:18px;transform:translateX(120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
             </div>
         </div>
         <script>
@@ -668,11 +683,35 @@
                     <a href="#services" class="btn btn-outline-light">Our Services</a>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block text-center">
-                    <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1090&q=80" class="img-fluid drone-image" alt="Drone Hero Image" style="max-height: 400px;">
+                    <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1090&q=80" class="img-fluid drone-image" alt="Aerial drone in flight — Refurb 360 drone services" style="max-height: 400px;">
                 </div>
             </div>
         </div>
     </section>
+
+        <!-- Structured data for SEO -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Refurb 360",
+            "image": "https://yourdomain.example.com/assets/hero-bg.jpg",
+            "@id": "https://yourdomain.example.com/refurb.html",
+            "url": "https://yourdomain.example.com/refurb.html",
+            "telephone": "+919597497474",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Your Street Address",
+                "addressLocality": "Your City",
+                "addressRegion": "Your State",
+                "postalCode": "000000",
+                "addressCountry": "IN"
+            },
+            "priceRange": "$$",
+            "description": "Sales, repair and refurbishment of drones and action cameras, aerial photography, rentals and training.",
+            "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}]
+        }
+        </script>
 
     <!-- Partners Section -->
     <section id="partners" class="section-padding bg-light section-animate">
@@ -683,7 +722,7 @@
             </div>
             <div class="partner-logo-gallery-list" style="display: flex; flex-direction: column; gap: 48px; align-items: center;">
                 <div class="text-center partner-logo-gallery-item">
-                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="partner-logo mb-2" alt="DJI Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="partner-logo mb-2" alt="DJI certified drones — Refurb 360 partner" style="height:80px;max-width:160px;display:block;margin:0 auto;">
                     <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
                         <img src="assets/img/dji/dji1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 1" class="partner-gallery-img">
                         <img src="assets/img/dji/dji2.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 2" class="partner-gallery-img">
@@ -698,7 +737,7 @@
                     </div>
                 </div>
                 <div class="text-center partner-logo-gallery-item">
-                    <img src="tie-up logo/gopro-seeklogo.svg" class="partner-logo mb-2" alt="GoPro Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <img src="tie-up logo/gopro-seeklogo.svg" class="partner-logo mb-2" alt="GoPro action cameras — Refurb 360 partner" style="height:80px;max-width:160px;display:block;margin:0 auto;">
                     <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
                         <img src="assets/img/gopro/gopro1.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 1" class="partner-gallery-img">
                         <img src="assets/img/gopro/gopro2.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 2" class="partner-gallery-img">
@@ -955,7 +994,7 @@
                                 }
                             }
                         }
-                    }, 60);
+                    }, 1300);
                 });
                 viewBtn.style.display = '';
                 lessBtn.style.display = 'none';
@@ -1094,7 +1133,7 @@
                                 }
                             }
                         }
-                    }, 60);
+                    }, 1300);
                 });
                 viewBtn.style.display = '';
                 lessBtn.style.display = 'none';
