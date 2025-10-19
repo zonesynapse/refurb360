@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://refurb360.in/sitemap.xml

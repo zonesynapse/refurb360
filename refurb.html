@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refurb360 — Drone Shop & Repair in Coimbatore | Sales, Repairs & Aerial Services</title>
+    <meta name="description" content="Refurb360 — Coimbatore's trusted drone shop for DJI, GoPro & Insta360: sales, repairs, refurbishment, rentals, training and aerial photography. Visit refurb360.in or call +91 95974 97474.">
+    <meta name="keywords" content="Refurb360, drone shop Coimbatore, drone repair Coimbatore, DJI service Coimbatore, GoPro repair Coimbatore, Insta360 service, aerial photography Coimbatore">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://refurb360.in/refurb.html">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Refurb360 — Drone Shop & Repair in Coimbatore">
+    <meta property="og:description" content="Refurb360 in Coimbatore: sales, refurbishment and professional aerial services for DJI drones, GoPro & Insta360 cameras. Repairs, rentals, training and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://refurb360.in/refurb.html">
+    <meta property="og:image" content="https://refurb360.in/assets/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Refurb360 — Drone Shop & Repair in Coimbatore">
+    <meta name="twitter:description" content="Refurb360 — Coimbatore drone sales, repairs, rentals and aerial services. Contact +91 95974 97474 or visit refurb360.in.">
+    <meta name="twitter:image" content="https://refurb360.in/assets/hero-bg.jpg">
+    <meta name="author" content="Refurb 360">
+    <meta name="theme-color" content="#151515">
+    <link rel="alternate" href="https://refurb360.in/refurb.html" hreflang="en">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://refurb360.in/sitemap.xml">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button (gallery only) */
+        /* Responsive Coming Soon Modal */
+        #launchModal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #launchModal .launch-modal-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            max-width: 100vw;
+        }
+        @media (max-width: 767.98px) {
+            /* Match refurb1.html: make the modal images full-bleed and mobile-friendly */
+            #launchLeftImg {
+                width: 100vw !important;
+                max-width: 100vw !important;
+                height: auto !important;
+                max-height: 50vh !important;
+                object-fit: contain !important;
+                display: block;
+                margin: 0 auto 0 auto !important;
+                background: #222;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+            }
+            #launchModal .launch-modal-content {
+                background: transparent !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                flex-direction: column;
+                gap: 0;
+                width: 100vw;
+                max-width: 100vw;
+                align-items: center;
+                justify-content: center;
+            }
+            #launchModal img {
+                width: 100%;
+                max-width: 95vw !important;
+                height: auto !important;
+                max-height: 40vh !important;
+                object-fit: contain !important;
+                display: block;
+                margin: 0 auto 10px auto !important;
+            }
+            #launchModal .launch-modal-content {
+                padding: 12px 0;
+            }
+            #launchModal div[style*="padding:0 32px"] {
+                padding: 0 8px !important;
+            }
+            #launchModal {
+                overflow-y: auto !important;
+                max-height: 100vh !important;
+            }
+        }
+      a[href*="wa.me"]:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  }
+
+  /* Optional bounce animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  a[href*="wa.me"] {
+    animation: bounce 2s infinite;
+  }
+        /* Attractive transition for partner logos on mobile */
+        @media (max-width: 575.98px) {
+            .partners-row {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                overflow-x: unset !important;
+                gap: 32px !important;
+                -webkit-overflow-scrolling: unset;
+                padding-bottom: 8px;
+                justify-content: center !important;
+            }
+            .partners-row > div {
+                flex: 0 0 auto !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: unset !important;
+                width: 90px !important;
+                padding: 0;
+                margin-right: 0 !important;
+            }
+            .partner-logo {
+                height: 40px;
+                width: auto;
+                max-width: 80px;
+            }
+        }
+        @keyframes partnerLogoFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.85) translateY(30px);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1.05) translateY(-6px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .section-animate {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+            will-change: opacity, transform;
+        }
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .feature-card, .testimonial-card, .faq-item, .drone-image, .partner-logo {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        .feature-card.visible, .testimonial-card.visible, .faq-item.visible, .drone-image.visible, .partner-logo.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        :root {
+            --marvel-red: #d42027;
+            --marvel-blue: #3a86ff;
+            --marvel-dark: #151515;
+            --marvel-gold: #f0c75e;
+            --marvel-light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .marvel-bg {
+            background-color: var(--marvel-dark);
+        }
+        
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled {
+            padding: 5px 0;
+            background-color: var(--marvel-dark) !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(21, 21, 21, 0.85), rgba(21, 21, 21, 0.9)), url('https://images.unsplash.com/photo-1516545595035-b494dd0161e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(135deg, transparent 0%, transparent 50%, var(--marvel-dark) 50%, var(--marvel-dark) 100%),
+                        linear-gradient(45deg, var(--marvel-dark) 0%, var(--marvel-dark) 50%, transparent 50%, transparent 100%);
+            background-size: 20px 20px;
+        }
+        
+        .btn-primary {
+            background-color: var(--marvel-red);
+            border-color: var(--marvel-red);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b31c22;
+            border-color: #b31c22;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 32, 39, 0.3);
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--marvel-red);
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--marvel-red);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--marvel-red);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+            border-left: 4px solid var(--marvel-red);
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(120deg, #1a2238 0%, #3a86ff 60%, #d42027 100%);
+            color: #fffbe9;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--marvel-gold);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25), 0 0 0 8px #fff3 inset;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 120%;
+            height: 60px;
+            background: repeating-linear-gradient(-12deg, var(--marvel-gold), var(--marvel-gold) 8px, transparent 8px, transparent 18px);
+            opacity: 0.18;
+            z-index: 1;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120%;
+            height: 60px;
+            background: repeating-linear-gradient(12deg, var(--marvel-gold), var(--marvel-gold) 8px, transparent 8px, transparent 18px);
+            opacity: 0.18;
+            z-index: 1;
+        }
+
+        .cta-section .row {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 10px #000, 0 0 8px #3a86ff, 0 0 12px var(--marvel-gold);
+            color: #fffbe9;
+        }
+
+        .cta-section .btn-light.btn-lg {
+            background: #fffbe9;
+            color: #d42027;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 0 18px 2px var(--marvel-gold), 0 2px 8px rgba(0,0,0,0.15);
+            border: 2px solid var(--marvel-gold);
+            transition: box-shadow 0.2s, transform 0.2s, color 0.2s, background 0.2s;
+        }
+        .cta-section .btn-light.btn-lg:hover {
+            background: var(--marvel-gold);
+            color: #1a2238;
+            box-shadow: 0 0 32px 8px var(--marvel-gold), 0 4px 16px rgba(0,0,0,0.18);
+            transform: scale(1.05) rotate(-2deg);
+        }
+        
+        footer {
+            background-color: var(--marvel-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--marvel-red);
+        }
+        
+        .marvel-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .partner-logo {
+            height: 60px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .faq-item {
+            border-left: 3px solid var(--marvel-red);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .drone-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .drone-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .marvel-comic-border {
+            border: 3px solid var(--marvel-red);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .marvel-comic-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--marvel-red);
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar .navbar-collapse {
+                background: var(--marvel-dark);
+                padding: 1rem;
+                border-radius: 0 0 10px 10px;
+            }
+            .navbar-nav .nav-link {
+                padding: 0.75rem 1rem;
+                text-align: left;
+                transition: color 0.2s, background 0.2s;
+            }
+            .navbar-nav .nav-link.active,
+            .navbar-nav .nav-link:focus,
+            .navbar-nav .nav-link:hover {
+                color: #fff;
+                background: linear-gradient(90deg, #d42027 0%, #3a86ff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                /* text-fill-color: transparent; */
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-shadow: 0 2px 12px #d42027cc, 0 1px 4px #3a86ff99;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            .hero-section .row {
+                flex-direction: column-reverse;
+            }
+            .hero-section img {
+                margin-bottom: 30px;
+                max-width: 80vw;
+                max-height: 250px;
+            }
+            .section-padding {
+                padding: 40px 0;
+            }
+            .feature-card, .testimonial-card {
+                padding: 18px;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .drone-image {
+                width: 100%;
+                max-width: 100vw;
+                border-radius: 12px;
+                overflow: hidden;
+                margin: 0 auto 18px auto;
+            }
+            .drone-image img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100vw;
+                max-height: none !important;
+                object-fit: unset !important;
+                object-position: unset !important;
+                display: block;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+            .hero-section h1,
+            .display-4 {
+                font-size: 1.3rem !important;
+            }
+            .hero-section p,
+            .lead {
+                font-size: 0.95rem !important;
+            }
+            .section-title {
+                font-size: 1.1rem !important;
+            }
+            .btn-primary, .btn-outline-light, .btn-light {
+                padding: 8px 12px;
+                font-size: 0.95rem;
+            }
+            .feature-icon {
+                font-size: 1.3rem;
+            }
+            .testimonial-img {
+                width: 38px;
+                height: 38px;
+            }
+            .faq-item h4 {
+                font-size: 0.98rem;
+            }
+            footer h4, footer h5 {
+                font-size: 0.98rem;
+            }
+        }
+        .partner-gallery-scroll {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE 10+ */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+            overflow-x: auto;
+            padding: 12px 0 18px 0;
+        }
+        .partner-gallery-scroll::-webkit-scrollbar {
+            display: none; /* Chrome/Safari/Webkit */
+        }
+        .partner-gallery-scroll img {
+            height: 140px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin: 0 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            background: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .partner-gallery-scroll img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+        }
+        @media (max-width: 575.98px) {
+            .partner-gallery-scroll img {
+                height: 80px !important;
+                max-width: 120px !important;
+                margin: 0 6px !important;
+                border-radius: 7px !important;
+            }
+        }
+
+        /* Responsive width for each partner logo gallery item */
+        .partner-logo-gallery-item {
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+            padding-right: 0;
+            box-sizing: border-box;
+        }
+        @media (max-width: 991.98px) {
+            .partner-logo-gallery-item {
+                max-width: 700px;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .partner-logo-gallery-item {
+                max-width: 98vw;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .partner-logo-gallery-item {
+                max-width: 99vw;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- Coming Soon Launch Modal -->
+        <div id="launchModal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:rgba(21,21,21,0.98);transition:opacity 0.6s;">
+            <div style="position:absolute;top:32px;right:48px;z-index:10001;">
+                <span id="launchModalClose" style="font-size:2.5rem;color:#fff;cursor:pointer;font-weight:bold;user-select:none;background:rgba(0,0,0,0.2);border-radius:50%;padding:8px 18px;transition:background 0.2s;">&times;</span>
+            </div>
+            <div class="launch-modal-content">
+                <img src="assets/img/comming soon/comming soon1.jpeg" alt="Coming Soon Left" id="launchLeftImg" style="max-width:400px;width:100%;height:auto;object-fit:contain;box-shadow:0 8px 32px rgba(0,0,0,0.4);border-radius:18px;transform:translateX(-120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
+                <div style="padding:0 32px;text-align:center;">
+                    <h1 style="color:#fffbe9;font-size:2.8rem;font-family:'Bebas Neue',cursive;letter-spacing:2px;text-shadow:0 2px 18px #d42027,0 0 8px #3a86ff,0 0 12px #f0c75e;">COMING SOON</h1>
+                    <p style="color:#fffbe9;font-size:1.3rem;margin-top:18px;letter-spacing:1px;">Get ready for something <span style="color:#d42027;font-weight:bold;">exciting</span>!<br>Launching our new product soon.</p>
+                </div>
+                <img src="assets/img/comming soon/comming soon2.jpeg" alt="Coming Soon Right" id="launchRightImg" style="max-width:400px;width:100%;height:auto;object-fit:contain;box-shadow:0 8px 32px rgba(0,0,0,0.4);border-radius:18px;transform:translateX(120vw);opacity:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s;">
+            </div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('launchModal');
+            var leftImg = document.getElementById('launchLeftImg');
+            var rightImg = document.getElementById('launchRightImg');
+            var closeBtn = document.getElementById('launchModalClose');
+            setTimeout(function() {
+                leftImg.style.transform = 'translateX(0)';
+                leftImg.style.opacity = '1';
+                rightImg.style.transform = 'translateX(0)';
+                rightImg.style.opacity = '1';
+            }, 200);
+            closeBtn.addEventListener('click', function() {
+                modal.style.opacity = '0';
+                setTimeout(function() {
+                    modal.style.display = 'none';
+                }, 600);
+            });
+            // Optional: close on Esc key
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 'Escape' || e.key === 'Esc') && modal.style.display !== 'none') {
+                    modal.style.opacity = '0';
+                    setTimeout(function() {
+                        modal.style.display = 'none';
+                    }, 600);
+                }
+            });
+        });
+        </script>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": ["Drone Repair","Drone Sales","Aerial Photography","Camera Repair"],
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Refurb360",
+                "telephone": "+919597497474",
+                "url": "https://refurb360.in/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "No.31 2nd Floor, MM Building, Dr Rajendra Prasad Rd",
+                    "addressLocality": "Gandhipuram, Coimbatore",
+                    "addressRegion": "Tamil Nadu",
+                    "postalCode": "641012",
+                    "addressCountry": "IN"
+                }
+            },
+            "areaServed": "Coimbatore",
+            "description": "Drone repair, sales and aerial photography services in Coimbatore. Repairs for DJI, GoPro and Insta360 devices."
+        }
+        </script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top marvel-bg">
+        <div class="container">
+            <a class="navbar-brand marvel-logo d-flex align-items-center gap-2" href="#" style="padding-top:2px;padding-bottom:2px;">
+                <img src="logo.png" alt="Refurb 360 Logo" style="height:36px;width:auto;display:inline-block;vertical-align:middle;margin-right:6px;margin-bottom:2px;box-shadow:0 1px 4px rgba(0,0,0,0.08);background:#fff;border-radius:4px;">
+                <span style="display:inline-block;vertical-align:middle;line-height:1;">REFURB<span class="text-danger">360</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section section-animate">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">REVIVE<span class="text-danger">!</span> REFLY<span class="text-danger">!</span> RECREATE<span class="text-danger">!</span></h1>
+                    <p class="lead mb-4">From drones to action cams — we keep your vision alive.</p>
+                    <p class="mb-4">Your premier destination for drone sales, repair, and aerial services with the power and reliability of a Marvel superhero.</p>
+                    <a href="#contact" class="btn btn-primary me-3">Get Started</a>
+                    <a href="#services" class="btn btn-outline-light">Our Services</a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1090&q=80" class="img-fluid drone-image" alt="Aerial drone in flight — Refurb 360 drone services" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Structured data for SEO -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Refurb360",
+            "image": "https://refurb360.in/assets/hero-bg.jpg",
+            "@id": "https://refurb360.in/",
+            "url": "https://refurb360.in/",
+            "telephone": "+919597497474",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "No.31 2nd Floor, MM Building, Dr Rajendra Prasad Rd",
+                "addressLocality": "Gandhipuram, Coimbatore",
+                "addressRegion": "Tamil Nadu",
+                "postalCode": "641012",
+                "addressCountry": "IN"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 11.0168, "longitude": 76.9558 },
+            "priceRange": "INR",
+            "description": "Refurb360 — Coimbatore drone shop: sales, repair, refurbishment, rentals, training and aerial photography services.",
+            "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"18:00"}]
+        }
+        </script>
+
+    <!-- Partners Section -->
+    <section id="partners" class="section-padding bg-light section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Partners</h2>
+                <p class="lead">We collaborate with industry leaders to bring you the best products and services</p>
+            </div>
+            <div class="partner-logo-gallery-list" style="display: flex; flex-direction: column; gap: 48px; align-items: center;">
+                <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="partner-logo mb-2" alt="DJI certified drones — Refurb 360 partner" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/dji/dji1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 1" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji2.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 2" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji3.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 3" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji4.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 4" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji5.png" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 5" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji6.png" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 6" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji7.png" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 7" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji8.png" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 8" class="partner-gallery-img">
+                        <img src="assets/img/dji/dji9.png" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 9" class="partner-gallery-img">
+                        <!-- <img src="assets/img/portfolio/product-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 10" class="partner-gallery-img"> -->
+                    </div>
+                </div>
+                <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/gopro-seeklogo.svg" class="partner-logo mb-2" alt="GoPro action cameras — Refurb 360 partner" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/gopro/gopro1.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 1" class="partner-gallery-img">
+                        <img src="assets/img/gopro/gopro2.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 2" class="partner-gallery-img">
+                        <img src="assets/img/gopro/gopro3.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 3" class="partner-gallery-img">
+                        <img src="assets/img/gopro/gopro4.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 4" class="partner-gallery-img">
+                        <img src="assets/img/gopro/gopro5.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 5" class="partner-gallery-img">
+                        <img src="assets/img/gopro/gopro6.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 6" class="partner-gallery-img">
+                        <img src="assets/img/gopro/gopro7.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 7" class="partner-gallery-img">
+                        <img src="assets/img/gopro/gopro8.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 8" class="partner-gallery-img">
+                        <!-- <img src="assets/img/portfolio/books-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 9" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/books-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 10" class="partner-gallery-img"> -->
+                    </div>
+                </div>
+                <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/Insta360_logo_(transparent).svg.png" class="partner-logo mb-2" alt="Insta360 Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/insta 360/insta3601.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 1" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3602.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 2" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3603.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 3" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3604.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 4" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3605.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 5" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3606.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 6" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3607.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 7" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3608.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 8" class="partner-gallery-img">
+                        <img src="assets/img/insta 360/insta3609.jpeg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 9" class="partner-gallery-img">
+                        <!-- <img src="assets/img/portfolio/branding-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 10" class="partner-gallery-img"> -->
+                    </div>
+                </div>
+                <!-- <div class="text-center partner-logo-gallery-item">
+                    <img src="tie-up logo/Autel Robotics_ideDorDEhh_1.svg" class="partner-logo mb-2" alt="Autel Robotics Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
+                        <img src="assets/img/portfolio/app-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 1" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/app-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 2" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/app-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 3" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/books-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 4" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/books-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 5" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/books-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 6" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/branding-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 7" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/branding-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 8" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/branding-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 9" class="partner-gallery-img">
+                        <img src="assets/img/portfolio/product-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Autel 10" class="partner-gallery-img">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <script src="partner-gallery.js"></script>
+        <!-- Modal for full image view -->
+        <div id="partnerGalleryModal" style="display:none;position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+            <span id="partnerGalleryModalClose" style="position:absolute;top:32px;right:48px;font-size:2.5rem;color:#fff;cursor:pointer;font-weight:bold;z-index:2010;user-select:none;">&times;</span>
+            <img id="partnerGalleryModalImg" src="" alt="Full Image" style="max-width:90vw;max-height:80vh;box-shadow:0 8px 32px rgba(0,0,0,0.5);border-radius:12px;display:block;margin:auto;">
+        </div>
+        <script>
+        // Partner logo gallery image click to show full image modal
+        document.addEventListener('DOMContentLoaded', function() {
+            var imgs = document.querySelectorAll('.partner-gallery-img');
+            var modal = document.getElementById('partnerGalleryModal');
+            var modalImg = document.getElementById('partnerGalleryModalImg');
+            var modalClose = document.getElementById('partnerGalleryModalClose');
+            imgs.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                });
+            });
+            modalClose.addEventListener('click', function() {
+                modal.style.display = 'none';
+                modalImg.src = '';
+            });
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    modalImg.src = '';
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (modal.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+                    modal.style.display = 'none';
+                    modalImg.src = '';
+                }
+            });
+        });
+        </script>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Services</h2>
+                <p class="lead">Comprehensive drone and camera solutions for all your needs</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Sales</h3>
+                        <p>New & certified refurbished DJI drones, GoPro & Insta360 cameras, and all necessary accessories including batteries, gimbals, mounts, and filters.</p>
+                        <a href="#partners" class="btn btn-sm btn-outline-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Repairs & Refurbishment</h3>
+                        <p>Expert DJI drone diagnostics, repair, & tuning. GoPro/Insta360 camera repair (lens, battery, firmware) and gimbal & stabilizer repair services.</p>
+                        <a href="#contact" class="btn btn-sm btn-outline-primary">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>Aerial & Visual Services</h3>
+                        <p>Aerial photography & cinematography, mapping, surveying, inspection services, and adventure & sports action footage setups.</p>
+                        <a href="#gallery" class="btn btn-sm btn-outline-primary">View Portfolio</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Training & Compliance</h3>
+                        <p>Drone flying lessons, DGCA licensing assistance, and safe handling workshops for action cameras & drones.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Explore Courses</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Equipment Rental</h3>
+                        <p>Rent high-end drones and camera equipment for your projects without the commitment of purchasing.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Rental Options</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Custom Solutions</h3>
+                        <p>Tailored drone and camera solutions for specific industry needs including agriculture, construction, and event coverage.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-light section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Gallery</h2>
+                <p class="lead">See the world from a new perspective with our drone photography</p>
+            </div>
+            <div class="row mt-5" id="our-gallery-row">
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM.jpeg" class="img-fluid" alt="Aerial landscape">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(1).jpeg" class="img-fluid" alt="Drone flat lay">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(3).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(2).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary" id="view-full-our-gallery-btn">View Full Gallery</a>
+                <a href="#" class="btn btn-primary" id="show-less-our-gallery-btn" style="display:none;">Show Less</a>
+            </div>
+        </div>
+    <script>
+    // View Full Our Gallery functionality with Show Less toggle (only for our gallery)
+    document.addEventListener('DOMContentLoaded', function() {
+        var viewBtn = document.getElementById('view-full-our-gallery-btn');
+        var lessBtn = document.getElementById('show-less-our-gallery-btn');
+        var hiddenSelector = '#our-gallery-row .our-gallery-hidden';
+        var firstImage = document.querySelector('#our-gallery-row .col-md-4.mb-4');
+
+        if (viewBtn && lessBtn) {
+            viewBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll(hiddenSelector).forEach(function(el) {
+                    el.style.display = '';
+                    el.classList.remove('visible');
+                    void el.offsetWidth; // force reflow for transition
+                    el.classList.add('visible');
+                });
+                viewBtn.style.display = 'none';
+                lessBtn.style.display = '';
+            });
+            lessBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var images = Array.from(document.querySelectorAll(hiddenSelector));
+                var transitioned = 0;
+                images.forEach(function(el) {
+                    el.classList.remove('visible');
+                    el.removeEventListener('transitionend', el._onTransitionEndGallery);
+                    var onTransitionEnd = function(event) {
+                        if (event.propertyName === 'opacity') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    };
+                    el._onTransitionEndGallery = onTransitionEnd;
+                    el.addEventListener('transitionend', onTransitionEnd);
+                    // Fallback: if transitionend doesn't fire, force hide after 1.3s
+                    setTimeout(function() {
+                        if (el.style.display !== 'none') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    }, 1300);
+                });
+                viewBtn.style.display = '';
+                lessBtn.style.display = 'none';
+            });
+        }
+    });
+    </script>
+</body>
+</html>
+    </section>
+    <!-- client Gallery Section -->
+    <section id="client-gallery" class="section-padding bg-light section-animate">
+    <div class="container" style="position:relative;">
+            <div class="text-center">
+                <h2 class="section-title">Client Gallery</h2>
+                <p class="lead">See the world from a new perspective with our drone photography</p>
+            </div>
+            <div class="row mt-5" id="client-gallery-row">
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM.jpeg" class="img-fluid" alt="Aerial landscape">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM(1).jpeg" class="img-fluid" alt="Drone flat lay">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.57 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM(1).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.00 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM(1).jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
+                    <div class="drone-image">
+                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.02 PM.jpeg" class="img-fluid" alt="Action shot">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary" id="view-full-client-gallery-btn">View Full Gallery</a>
+                <a href="#" class="btn btn-primary" id="show-less-client-gallery-btn" style="display:none;">Show Less</a>
+            </div>
+        </div>
+    </section>
+        <script>
+        // Show WhatsApp icon only when gallery section is visible
+        document.addEventListener('DOMContentLoaded', function() {
+            var whatsappBtn = document.querySelector('.whatsapp-float');
+            var gallerySection = document.getElementById('gallery');
+            function checkGalleryVisible() {
+                var rect = gallerySection.getBoundingClientRect();
+                var inView = rect.bottom > 0 && rect.top < window.innerHeight;
+                whatsappBtn.style.display = inView ? 'flex' : 'none';
+            }
+            checkGalleryVisible();
+            window.addEventListener('scroll', checkGalleryVisible);
+            window.addEventListener('resize', checkGalleryVisible);
+        });
+    // View Full Client Gallery functionality with Show Less toggle and fade-in effect
+    document.addEventListener('DOMContentLoaded', function() {
+        var viewBtn = document.getElementById('view-full-client-gallery-btn');
+        var lessBtn = document.getElementById('show-less-client-gallery-btn');
+        var hiddenSelector = '#client-gallery-row .gallery-hidden, #client-gallery-row .client-gallery-hidden';
+        var firstImage = document.querySelector('#client-gallery-row .col-md-4.mb-4');
+
+        if (viewBtn && lessBtn) {
+            viewBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll(hiddenSelector).forEach(function(el) {
+                    el.style.display = '';
+                    el.classList.remove('visible');
+                    void el.offsetWidth; // force reflow for transition
+                    el.classList.add('visible');
+                });
+                viewBtn.style.display = 'none';
+                lessBtn.style.display = '';
+            });
+            lessBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var images = Array.from(document.querySelectorAll(hiddenSelector));
+                var transitioned = 0;
+                images.forEach(function(el) {
+                    el.classList.remove('visible');
+                    el.removeEventListener('transitionend', el._onTransitionEndGallery);
+                    var onTransitionEnd = function(event) {
+                        if (event.propertyName === 'opacity') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    };
+                    el._onTransitionEndGallery = onTransitionEnd;
+                    el.addEventListener('transitionend', onTransitionEnd);
+                    // Fallback: if transitionend doesn't fire, force hide after 1.3s
+                    setTimeout(function() {
+                        if (el.style.display !== 'none') {
+                            el.style.display = 'none';
+                            el.removeEventListener('transitionend', onTransitionEnd);
+                            el._onTransitionEndGallery = null;
+                            transitioned++;
+                            if (transitioned === images.length) {
+                                if (firstImage) {
+                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    }, 1300);
+                });
+                viewBtn.style.display = '';
+                lessBtn.style.display = 'none';
+            });
+        }
+    });
+    </script>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="lead">Get answers to common questions about our products and services</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                    Do you sell both new and refurbished products?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Yes — we provide brand-new units as well as professionally refurbished DJI drones, GoPros, and Insta360 cameras.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                    Do repairs affect warranty?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">We use genuine parts and provide our own service warranty on all repairs.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                    How long does a typical camera or drone repair take?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Usually 3–7 days depending on parts availability and complexity.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                    Do you offer accessories too?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Yes — from drone propellers to GoPro mounts and Insta360 invisible selfie sticks, we stock everything you need.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h4 class="accordion-header" id="faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                    Can you help me decide which device suits my needs?
+                                </button>
+                            </h4>
+                            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Definitely — our team helps match the best drone or action camera for your purpose and budget.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section-animate">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Ready to Elevate Your Perspective?</h2>
+                    <p class="lead mb-0">Contact us today for a free consultation and let's discuss how our drone solutions can help you achieve your goals.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#contact" class="btn btn-light btn-lg">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding section-animate">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="lead">Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select class="form-select" id="service" name="service">
+                                <option value="" selected>Select a service</option>
+                                <option value="Drone/Camera Sales">Drone/Camera Sales</option>
+                                <option value="Repair Services">Repair Services</option>
+                                <option value="Aerial Services">Aerial Services</option>
+                                <option value="Training & Certification">Training & Certification</option>
+                                <option value="Equipment Rental">Equipment Rental</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp section -->
+<a href="https://wa.me/919597497474" target="_blank" 
+     style="position: fixed; bottom: 20px; right: 20px; 
+                    background-color: #d42027; color: #fff; 
+                    border-radius: 50%; width: 60px; height: 60px; 
+                    display: flex; align-items: center; justify-content: center; 
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    text-decoration: none; border: none;">
+    <i class="fab fa-whatsapp" style="font-size: 30px; text-decoration: none; border: none;"></i>
+</a>
+    <!-- Footer -->
+    <footer class="section-animate">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>REFURB <span class="text-danger">360</span></h4>
+                    <p>From drones to action cams — we keep your vision alive.</p>
+                    <p class="mb-1"><i class="fas fa-quote-left me-2"></i> Revive<span class="text-danger">!</span> Refly<span class="text-danger">!</span> Recreate<span class="text-danger">!</span></p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@refurb360?si=Kkun47FCqJHCPcDD"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li><a href="#partners" class="text-white text-decoration-none">Partners</a></li>
+                        <li><a href="#gallery" class="text-white text-decoration-none">Gallery</a></li>
+                        <li><a href="#faq" class="text-white text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Drone Sales</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Camera Repair</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Aerial Photography</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Drone Training</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Equipment Rental</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-map-marker-alt mt-1"></i>
+                                </span>
+                                <span>
+                                    <a href="https://maps.app.goo.gl/yEki6YgsWoJYa3Aq6" target="_blank" rel="noopener" class="text-white text-decoration-none" style="font-size:1.05rem;line-height:1.5;display:inline-block;">
+                                        No.31 2nd Floor, MM Building,<br>
+                                        Dr Rajendra Prasad Rd,<br>
+                                        Gandhipuram, Coimbatore,<br>
+                                        Tamil Nadu 641012
+                                    </a>
+                                </span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-phone mt-1"></i>
+                                </span>
+                                <span><a href="tel:+919597497474" class="text-white text-decoration-none">+91 95974 97474</a></span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-envelope mt-1"></i>
+                                </span>
+                                <span><a href="mailto:Services.refurb360@gmail.com" class="text-white text-decoration-none" style="word-break: break-all;">Services.refurb360@gmail.com</a></span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start;">
+                                <span style="width: 22px; display: inline-block; text-align: center;">
+                                    <i class="fas fa-clock mt-1"></i>
+                                </span>
+                                <span>Mon-Sat: 9AM - 6PM</span>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 REFURB 360. All rights reserved.</p>
+                                <div style="font-size: 0.7rem; color: #bbb; margin-top: 2px;">
+                                    <a href="https://zonesynapse.github.io/" target="_blank" rel="noopener" style="color: #bbb; text-decoration: underline dotted;">Made by Zonesynapse</a>
+                                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links & close mobile menu on click
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                // Only scroll if anchor is on this page
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // Collapse navbar if open (for mobile)
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Dynamic nav active state based on scroll position
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+        const sections = Array.from(navLinks)
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        function setActiveNav() {
+            let scrollPos = window.scrollY + 80; // offset for navbar
+            let currentSection = sections[0];
+            for (let section of sections) {
+                if (section.offsetTop <= scrollPos) {
+                    currentSection = section;
+                }
+            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                link.style.color = '';
+                if (currentSection && link.getAttribute('href') === '#' + currentSection.id) {
+                    link.classList.add('active');
+                    link.style.color = '#fff';
+                }
+            });
+        }
+        window.addEventListener('scroll', setActiveNav);
+        window.addEventListener('DOMContentLoaded', setActiveNav);
+    </script>
+    <script>
+        // Section and div smooth transition on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.section-animate').forEach(el => observer.observe(el));
+            document.querySelectorAll('.feature-card, .testimonial-card, .faq-item, .drone-image, .partner-logo').forEach(el => observer.observe(el));
+        });
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var data = {
+                "First Name": form.elements['firstName'].value,
+                "Last Name": form.elements['lastName'].value,
+                "Email": form.elements['email'].value,
+                "Service Interested": form.elements['service'].value,
+                "Message": form.elements['message'].value
+            };
+            fetch('https://script.google.com/macros/s/AKfycbzUOT9LU0BEYa7FM_dSxFSh604pSo5w3xy3Llc5tsVFEInUHkiMAUvZ92E6mltsR9q6/exec', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(res => res.text())
+            .then(msg => {
+                alert('Thank you! Your message has been sent.');
+                form.reset();
+            })
+            .catch(err => alert('Error submitting form.'));
+        });
+    }
+});
+</script>
+</body>
+</html>
