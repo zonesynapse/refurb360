@@ -672,8 +672,8 @@ footer {
         font-size: 22px;
     }
     /* When shop-float is inside the navbar, show it inline and align it to the right of the Contact link */
-    .navbar .shop-float {
-        /* keep the icon in the normal document flow so it sits immediately after the Contact item */
+    /* .navbar .shop-float {
+        
         position: static;
         background: transparent;
         color: #fff;
@@ -681,16 +681,16 @@ footer {
         width: auto;
         height: auto;
         padding: 0 8px;
-        margin-left: 8px; /* small gap from the Contact link */
+        margin-left: 8px; 
         display: inline-flex;
         align-items: center;
         justify-content: center;
         box-shadow: none;
         border: none;
         transition: none;
-        /* slight downward nudge for pixel-perfect alignment with Contact link */
+        
         transform: translateY(8px);
-    }
+    } */
 
     /* Make the navbar container a positioning context so absolute children (mobile icon) align to it */
     .navbar .container {
