@@ -19,7 +19,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://refurb360.in/">
     <meta property="og:image" content="https://refurb360.in/logo.png">
-    <meta name="msvalidate.01" content="5D93AADC0EB1A645AEAAC6695D5E6881" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Refurb360 — Drone Shop & Repair in Coimbatore">
     <meta name="twitter:description" content="Refurb360 — Coimbatore drone sales, repair, rentals and aerial services. Contact +91 95974 97474 or visit refurb360.in.">
@@ -32,570 +31,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* WhatsApp Floating Button (gallery only) */
-        /* Responsive Coming Soon Modal */
-        #launchModal {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        #launchModal .launch-modal-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            max-width: 100vw;
-        }
-        @media (max-width: 767.98px) {
-            /* Match refurb1.html: make the modal images full-bleed and mobile-friendly */
-            #launchLeftImg {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                height: auto !important;
-                max-height: 50vh !important;
-                object-fit: contain !important;
-                display: block;
-                margin: 0 auto 0 auto !important;
-                background: #222;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-            }
-            #launchModal .launch-modal-content {
-                background: transparent !important;
-                border-radius: 0 !important;
-                padding: 0 !important;
-                flex-direction: column;
-                gap: 0;
-                width: 100vw;
-                max-width: 100vw;
-                align-items: center;
-                justify-content: center;
-            }
-            #launchModal img {
-                width: 100%;
-                max-width: 95vw !important;
-                height: auto !important;
-                max-height: 40vh !important;
-                object-fit: contain !important;
-                display: block;
-                margin: 0 auto 10px auto !important;
-            }
-            #launchModal .launch-modal-content {
-                padding: 12px 0;
-            }
-            #launchModal div[style*="padding:0 32px"] {
-                padding: 0 8px !important;
-            }
-            #launchModal {
-                overflow-y: auto !important;
-                max-height: 100vh !important;
-            }
-        }
-      a[href*="wa.me"]:hover {
-    transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-  }
-
-  /* Optional bounce animation */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  a[href*="wa.me"] {
-    animation: bounce 2s infinite;
-  }
-        /* Attractive transition for partner logos on mobile */
-        @media (max-width: 575.98px) {
-            .partners-row {
-                display: flex !important;
-                flex-direction: row !important;
-                flex-wrap: wrap !important;
-                overflow-x: unset !important;
-                gap: 32px !important;
-                -webkit-overflow-scrolling: unset;
-                padding-bottom: 8px;
-                justify-content: center !important;
-            }
-            .partners-row > div {
-                flex: 0 0 auto !important;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                min-width: unset !important;
-                width: 90px !important;
-                padding: 0;
-                margin-right: 0 !important;
-            }
-            .partner-logo {
-                height: 40px;
-                width: auto;
-                max-width: 80px;
-            }
-        }
-        @keyframes partnerLogoFadeIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.85) translateY(30px);
-            }
-            80% {
-                opacity: 1;
-                transform: scale(1.05) translateY(-6px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        .section-animate {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
-            will-change: opacity, transform;
-        }
-        .section-animate.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        .feature-card, .testimonial-card, .faq-item, .drone-image, .partner-logo {
-            opacity: 0;
-            transform: translateY(30px) scale(0.98);
-            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
-        }
-        .feature-card.visible, .testimonial-card.visible, .faq-item.visible, .drone-image.visible, .partner-logo.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        :root {
-            --marvel-red: #d42027;
-            --marvel-blue: #3a86ff;
-            --marvel-dark: #151515;
-            --marvel-gold: #f0c75e;
-            --marvel-light: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            overflow-x: hidden;
-            background-color: #f5f5f5;
-        }
-        
-        .marvel-bg {
-            background-color: var(--marvel-dark);
-        }
-        
-        .navbar {
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-scrolled {
-            padding: 5px 0;
-            background-color: var(--marvel-dark) !important;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(21, 21, 21, 0.85), rgba(21, 21, 21, 0.9)), url('https://images.unsplash.com/photo-1516545595035-b494dd0161e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 150px 0 100px;
-            color: white;
-            position: relative;
-        }
-        
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: linear-gradient(135deg, transparent 0%, transparent 50%, var(--marvel-dark) 50%, var(--marvel-dark) 100%),
-                        linear-gradient(45deg, var(--marvel-dark) 0%, var(--marvel-dark) 50%, transparent 50%, transparent 100%);
-            background-size: 20px 20px;
-        }
-        
-        .btn-primary {
-            background-color: var(--marvel-red);
-            border-color: var(--marvel-red);
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary:hover {
-            background-color: #b31c22;
-            border-color: #b31c22;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 32, 39, 0.3);
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -15px;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--marvel-red);
-        }
-        
-        .feature-card {
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-            border-top: 4px solid var(--marvel-red);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--marvel-red);
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-card {
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin: 15px;
-            border-left: 4px solid var(--marvel-red);
-        }
-        
-        .testimonial-img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-        
-        .cta-section {
-            background: linear-gradient(120deg, #1a2238 0%, #3a86ff 60%, #d42027 100%);
-            color: #fffbe9;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-            border: 4px solid var(--marvel-gold);
-            border-radius: 18px;
-            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25), 0 0 0 8px #fff3 inset;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            left: -30px;
-            width: 120%;
-            height: 60px;
-            background: repeating-linear-gradient(-12deg, var(--marvel-gold), var(--marvel-gold) 8px, transparent 8px, transparent 18px);
-            opacity: 0.18;
-            z-index: 1;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 120%;
-            height: 60px;
-            background: repeating-linear-gradient(12deg, var(--marvel-gold), var(--marvel-gold) 8px, transparent 8px, transparent 18px);
-            opacity: 0.18;
-            z-index: 1;
-        }
-
-        .cta-section .row {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-section h2 {
-            font-family: 'Bebas Neue', cursive;
-            letter-spacing: 2px;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 10px #000, 0 0 8px #3a86ff, 0 0 12px var(--marvel-gold);
-            color: #fffbe9;
-        }
-
-        .cta-section .btn-light.btn-lg {
-            background: #fffbe9;
-            color: #d42027;
-            font-weight: bold;
-            border-radius: 30px;
-            box-shadow: 0 0 18px 2px var(--marvel-gold), 0 2px 8px rgba(0,0,0,0.15);
-            border: 2px solid var(--marvel-gold);
-            transition: box-shadow 0.2s, transform 0.2s, color 0.2s, background 0.2s;
-        }
-        .cta-section .btn-light.btn-lg:hover {
-            background: var(--marvel-gold);
-            color: #1a2238;
-            box-shadow: 0 0 32px 8px var(--marvel-gold), 0 4px 16px rgba(0,0,0,0.18);
-            transform: scale(1.05) rotate(-2deg);
-        }
-        
-        footer {
-            background-color: var(--marvel-dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin-right: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            color: var(--marvel-red);
-        }
-        
-        .marvel-logo {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-        }
-        
-        .partner-logo {
-            height: 60px;
-            width: auto;
-            max-width: 120px;
-            object-fit: contain;
-            margin: 0 auto;
-            display: block;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-        .partner-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        
-        .faq-item {
-            border-left: 3px solid var(--marvel-red);
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .drone-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-        }
-        
-        .drone-image:hover {
-            transform: scale(1.03);
-        }
-        
-        .marvel-comic-border {
-            border: 3px solid var(--marvel-red);
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .marvel-comic-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--marvel-red);
-        }
-        
-        @media (max-width: 991.98px) {
-            .navbar .navbar-collapse {
-                background: var(--marvel-dark);
-                padding: 1rem;
-                border-radius: 0 0 10px 10px;
-            }
-            .navbar-nav .nav-link {
-                padding: 0.75rem 1rem;
-                text-align: left;
-                transition: color 0.2s, background 0.2s;
-            }
-            .navbar-nav .nav-link.active,
-            .navbar-nav .nav-link:focus,
-            .navbar-nav .nav-link:hover {
-                color: #fff;
-                background: linear-gradient(90deg, #d42027 0%, #3a86ff 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                /* text-fill-color: transparent; */
-                font-weight: 700;
-                letter-spacing: 1px;
-                text-shadow: 0 2px 12px #d42027cc, 0 1px 4px #3a86ff99;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 80px 0 40px;
-                text-align: center;
-            }
-            .hero-section .row {
-                flex-direction: column-reverse;
-            }
-            .hero-section img {
-                margin-bottom: 30px;
-                max-width: 80vw;
-                max-height: 250px;
-            }
-            .section-padding {
-                padding: 40px 0;
-            }
-            .feature-card, .testimonial-card {
-                padding: 18px;
-            }
-            .section-title {
-                font-size: 1.7rem;
-            }
-            .drone-image {
-                width: 100%;
-                max-width: 100vw;
-                border-radius: 12px;
-                overflow: hidden;
-                margin: 0 auto 18px auto;
-            }
-            .drone-image img {
-                width: 100% !important;
-                height: auto !important;
-                max-width: 100vw;
-                max-height: none !important;
-                object-fit: unset !important;
-                object-position: unset !important;
-                display: block;
-                border-radius: 12px;
-                box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            }
-        }
-
-        @media (max-width: 575.98px) {
-            .navbar-brand {
-                font-size: 1.1rem;
-            }
-            .hero-section h1,
-            .display-4 {
-                font-size: 1.3rem !important;
-            }
-            .hero-section p,
-            .lead {
-                font-size: 0.95rem !important;
-            }
-            .section-title {
-                font-size: 1.1rem !important;
-            }
-            .btn-primary, .btn-outline-light, .btn-light {
-                padding: 8px 12px;
-                font-size: 0.95rem;
-            }
-            .feature-icon {
-                font-size: 1.3rem;
-            }
-            .testimonial-img {
-                width: 38px;
-                height: 38px;
-            }
-            .faq-item h4 {
-                font-size: 0.98rem;
-            }
-            footer h4, footer h5 {
-                font-size: 0.98rem;
-            }
-        }
-        .partner-gallery-scroll {
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE 10+ */
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 32px;
-            overflow-x: auto;
-            padding: 12px 0 18px 0;
-        }
-        .partner-gallery-scroll::-webkit-scrollbar {
-            display: none; /* Chrome/Safari/Webkit */
-        }
-        .partner-gallery-scroll img {
-            height: 140px;
-            width: auto;
-            max-width: 220px;
-            object-fit: contain;
-            border-radius: 10px;
-            margin: 0 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            background: #fff;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .partner-gallery-scroll img:hover {
-            transform: scale(1.06);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
-        }
-        @media (max-width: 575.98px) {
-            .partner-gallery-scroll img {
-                height: 80px !important;
-                max-width: 120px !important;
-                margin: 0 6px !important;
-                border-radius: 7px !important;
-            }
-        }
-
-        /* Responsive width for each partner logo gallery item */
-        .partner-logo-gallery-item {
-            width: 100%;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 0;
-            padding-right: 0;
-            box-sizing: border-box;
-        }
-        @media (max-width: 991.98px) {
-            .partner-logo-gallery-item {
-                max-width: 700px;
-            }
-        }
-        @media (max-width: 767.98px) {
-            .partner-logo-gallery-item {
-                max-width: 98vw;
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-        @media (max-width: 575.98px) {
-            .partner-logo-gallery-item {
-                max-width: 99vw;
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-    </style>
+    <!-- External site styles -->
+    <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -643,97 +80,69 @@
         });
         </script>
 
-        <script type="application/ld+json">
+<!-- Structured Data for Local Business (Enhanced) -->
+<script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Refurb360",
-    "description": "Best drone repair shop in Coimbatore. DJI drone sales, GoPro repair, Insta360 service, aerial photography, and drone training in Gandhipuram, Coimbatore.",
-    "url": "https://refurb360.in/",
-    "logo": "https://refurb360.in/logo.png",
-    "telephone": "+91-95974-97474",
-    "email": "services.refurb360@gmail.com",
-    
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "No.31 2nd Floor, MM Building, Dr Rajendra Prasad Rd",
-        "addressLocality": "Gandhipuram",
-        "addressRegion": "Coimbatore, Tamil Nadu",
-        "postalCode": "641012",
-        "addressCountry": "IN"
-    },
-    
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "11.0168",
-        "longitude": "76.9558"
-    },
-    
-    "openingHoursSpecification": [
-        {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "18:00"
+  "@context": "https://schema.org",
+  "@type": "ElectronicsStore",
+  "name": "Refurb360",
+  "description": "Best drone repair shop in Coimbatore. DJI drone sales, GoPro repair, Insta360 service, aerial photography, and drone training in Gandhipuram, Coimbatore.",
+  "url": "https://refurb360.in/",
+  "logo": "https://refurb360.in/logo.png",
+  "telephone": "+91-95974-97474",
+  "email": "services.refurb360@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No.31 2nd Floor, MM Building, Dr Rajendra Prasad Rd",
+    "addressLocality": "Gandhipuram",
+    "addressRegion": "Coimbatore, Tamil Nadu",
+    "postalCode": "641012",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "11.0168",
+    "longitude": "76.9558"
+  },
+  "openingHours": "Mo-Sa 09:00-18:00",
+  "priceRange": "₹₹",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, UPI",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Drone Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "DJI Drone Repair",
+          "description": "Professional DJI drone repair service"
         }
-    ],
-    
-    "priceRange": "₹₹",
-    
-    "serviceType": [
-        "Drone Repair",
-        "Drone Sales", 
-        "Aerial Photography",
-        "Camera Repair",
-        "Drone Training",
-        "Equipment Rental"
-    ],
-    
-    "makesOffer": [
-        {
-            "@type": "Offer",
-            "name": "DJI Drone Repair Coimbatore",
-            "description": "Professional DJI drone repair service in Coimbatore for Mavic, Phantom, Inspire series"
-        },
-        {
-            "@type": "Offer", 
-            "name": "GoPro Repair Coimbatore",
-            "description": "GoPro camera repair service in Coimbatore for Hero series action cameras"
-        },
-        {
-            "@type": "Offer",
-            "name": "Aerial Photography Coimbatore", 
-            "description": "Professional drone photography and videography services in Coimbatore"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GoPro Camera Repair",
+          "description": "GoPro action camera repair services"
         }
-    ],
-    
-    "areaServed": [
-        {
-            "@type": "City",
-            "name": "Coimbatore"
-        },
-        {
-            "@type": "State",
-            "name": "Tamil Nadu"
-        }
-    ],
-    
-    "sameAs": [
-        "https://www.youtube.com/@refurb360",
-        "https://www.instagram.com/refurb360/",
-        "https://www.facebook.com/refurb360/"
-    ],
-    
-    "logo": "https://refurb360.in/logo.png",
-    "image": "https://refurb360.in/assets/hero-bg.jpg",
-    
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "47",
-        "bestRating": "5",
-        "worstRating": "1"
-    }
+      }
+    ]
+  },
+  "areaServed": ["Coimbatore", "Tamil Nadu"],
+  "sameAs": [
+    "https://www.youtube.com/@refurb360",
+    "https://www.instagram.com/refurb360/",
+    "https://www.facebook.com/refurb360/"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 }
 </script>
     <!-- Navigation -->
@@ -753,6 +162,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#partners">Partners</a>
@@ -939,7 +351,7 @@
                         </div>
                         <h3>Sales</h3>
                         <p>New & certified refurbished DJI drones, GoPro & Insta360 cameras, and all necessary accessories including batteries, gimbals, mounts, and filters.</p>
-                        <a href="#partners" class="btn btn-sm btn-outline-primary">Shop Now</a>
+                        <a href="shop.html" class="btn btn-sm btn-outline-primary">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -996,176 +408,78 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="section-padding bg-light section-animate">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Our Gallery</h2>
-                <p class="lead">See the world from a new perspective with our drone photography</p>
-            </div>
-            <div class="row mt-5" id="our-gallery-row">
-                <div class="col-md-4 mb-4">
-                    <div class="drone-image">
-                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM.jpeg" class="img-fluid" alt="Aerial landscape">
-                    </div>
+    <!-- Our Gallery Section -->
+<section id="gallery" class="section-padding bg-light section-animate">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="lead">See the world from a new perspective with our drone photography</p>
+        </div>
+        <div class="gallery-scroll-container mt-5">
+            <div class="gallery-scroll-track">
+                <div class="gallery-item">
+                    <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM.jpeg" alt="Aerial landscape">
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="drone-image">
-                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(1).jpeg" class="img-fluid" alt="Drone flat lay">
-                    </div>
+                <div class="gallery-item">
+                    <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(1).jpeg" alt="Drone flat lay">
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="drone-image">
-                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(1).jpg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(3).jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.19 PM(3).jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 our-gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(2).jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="our gallary/WhatsApp Image 2025-09-10 at 2.40.20 PM(2).jpeg" alt="Action shot">
                 </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary" id="view-full-our-gallery-btn">View Full Gallery</a>
-                <a href="#" class="btn btn-primary" id="show-less-our-gallery-btn" style="display:none;">Show Less</a>
             </div>
         </div>
-    <script>
-    // View Full Our Gallery functionality with Show Less toggle (only for our gallery)
-    document.addEventListener('DOMContentLoaded', function() {
-        var viewBtn = document.getElementById('view-full-our-gallery-btn');
-        var lessBtn = document.getElementById('show-less-our-gallery-btn');
-        var hiddenSelector = '#our-gallery-row .our-gallery-hidden';
-        var firstImage = document.querySelector('#our-gallery-row .col-md-4.mb-4');
+    </div>
+</section>
 
-        if (viewBtn && lessBtn) {
-            viewBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll(hiddenSelector).forEach(function(el) {
-                    el.style.display = '';
-                    el.classList.remove('visible');
-                    void el.offsetWidth; // force reflow for transition
-                    el.classList.add('visible');
-                });
-                viewBtn.style.display = 'none';
-                lessBtn.style.display = '';
-            });
-            lessBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                var images = Array.from(document.querySelectorAll(hiddenSelector));
-                var transitioned = 0;
-                images.forEach(function(el) {
-                    el.classList.remove('visible');
-                    el.removeEventListener('transitionend', el._onTransitionEndGallery);
-                    var onTransitionEnd = function(event) {
-                        if (event.propertyName === 'opacity') {
-                            el.style.display = 'none';
-                            el.removeEventListener('transitionend', onTransitionEnd);
-                            el._onTransitionEndGallery = null;
-                            transitioned++;
-                            if (transitioned === images.length) {
-                                if (firstImage) {
-                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                }
-                            }
-                        }
-                    };
-                    el._onTransitionEndGallery = onTransitionEnd;
-                    el.addEventListener('transitionend', onTransitionEnd);
-                    // Fallback: if transitionend doesn't fire, force hide after 1.3s
-                    setTimeout(function() {
-                        if (el.style.display !== 'none') {
-                            el.style.display = 'none';
-                            el.removeEventListener('transitionend', onTransitionEnd);
-                            el._onTransitionEndGallery = null;
-                            transitioned++;
-                            if (transitioned === images.length) {
-                                if (firstImage) {
-                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                }
-                            }
-                        }
-                    }, 1300);
-                });
-                viewBtn.style.display = '';
-                lessBtn.style.display = 'none';
-            });
-        }
-    });
-    </script>
-</body>
-</html>
-    </section>
-    <!-- client Gallery Section -->
-    <section id="client-gallery" class="section-padding bg-light section-animate">
-    <div class="container" style="position:relative;">
-            <div class="text-center">
-                <h2 class="section-title">Client Gallery</h2>
-                <p class="lead">See the world from a new perspective with our drone photography</p>
-            </div>
-            <div class="row mt-5" id="client-gallery-row">
-                <div class="col-md-4 mb-4">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM.jpeg" class="img-fluid" alt="Aerial landscape">
-                    </div>
+<!-- Client Gallery Section -->
+<section id="client-gallery" class="section-padding bg-light section-animate">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">Client Gallery</h2>
+            <p class="lead">See the world from a new perspective with our drone photography</p>
+        </div>
+        <div class="gallery-scroll-container mt-5">
+            <div class="gallery-scroll-track">
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM.jpeg" alt="Aerial landscape">
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM(1).jpeg" class="img-fluid" alt="Drone flat lay">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM(1).jpeg" alt="Drone flat lay">
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.57 PM.jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.57 PM.jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM.jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM.jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM.jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM.jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM(1).jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM(1).jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.00 PM.jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.00 PM.jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM(1).jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM(1).jpeg" alt="Action shot">
                 </div>
-                <div class="col-md-4 mb-4 gallery-hidden" style="display:none;">
-                    <div class="drone-image">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.02 PM.jpeg" class="img-fluid" alt="Action shot">
-                    </div>
+                <div class="gallery-item">
+                    <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.02 PM.jpeg" alt="Action shot">
                 </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary" id="view-full-client-gallery-btn">View Full Gallery</a>
-                <a href="#" class="btn btn-primary" id="show-less-client-gallery-btn" style="display:none;">Show Less</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
         <script>
         // Show WhatsApp icon only when gallery section is visible
         document.addEventListener('DOMContentLoaded', function() {
@@ -1180,67 +494,7 @@
             window.addEventListener('scroll', checkGalleryVisible);
             window.addEventListener('resize', checkGalleryVisible);
         });
-    // View Full Client Gallery functionality with Show Less toggle and fade-in effect
-    document.addEventListener('DOMContentLoaded', function() {
-        var viewBtn = document.getElementById('view-full-client-gallery-btn');
-        var lessBtn = document.getElementById('show-less-client-gallery-btn');
-        var hiddenSelector = '#client-gallery-row .gallery-hidden, #client-gallery-row .client-gallery-hidden';
-        var firstImage = document.querySelector('#client-gallery-row .col-md-4.mb-4');
-
-        if (viewBtn && lessBtn) {
-            viewBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll(hiddenSelector).forEach(function(el) {
-                    el.style.display = '';
-                    el.classList.remove('visible');
-                    void el.offsetWidth; // force reflow for transition
-                    el.classList.add('visible');
-                });
-                viewBtn.style.display = 'none';
-                lessBtn.style.display = '';
-            });
-            lessBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                var images = Array.from(document.querySelectorAll(hiddenSelector));
-                var transitioned = 0;
-                images.forEach(function(el) {
-                    el.classList.remove('visible');
-                    el.removeEventListener('transitionend', el._onTransitionEndGallery);
-                    var onTransitionEnd = function(event) {
-                        if (event.propertyName === 'opacity') {
-                            el.style.display = 'none';
-                            el.removeEventListener('transitionend', onTransitionEnd);
-                            el._onTransitionEndGallery = null;
-                            transitioned++;
-                            if (transitioned === images.length) {
-                                if (firstImage) {
-                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                }
-                            }
-                        }
-                    };
-                    el._onTransitionEndGallery = onTransitionEnd;
-                    el.addEventListener('transitionend', onTransitionEnd);
-                    // Fallback: if transitionend doesn't fire, force hide after 1.3s
-                    setTimeout(function() {
-                        if (el.style.display !== 'none') {
-                            el.style.display = 'none';
-                            el.removeEventListener('transitionend', onTransitionEnd);
-                            el._onTransitionEndGallery = null;
-                            transitioned++;
-                            if (transitioned === images.length) {
-                                if (firstImage) {
-                                    firstImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                }
-                            }
-                        }
-                    }, 1300);
-                });
-                viewBtn.style.display = '';
-                lessBtn.style.display = 'none';
-            });
-        }
-    });
+    
     </script>
 
     <!-- FAQ Section -->
@@ -1325,52 +579,87 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding section-animate">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Contact Us</h2>
-                <p class="lead">Have questions? We'd love to hear from you</p>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
-                    <form id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" required>
-                            </div>
+<section id="contact" class="section-padding section-animate">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="lead">Have questions? We'd love to hear from you</p>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+            <form id="contactForm"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSd1Rup8jHXx_2Ki9eNqWoyb3dyK0CzIizP-wvNdSzR1YHiTsA/formResponse"
+                method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" class="form-control" id="firstName" name="entry.192019186" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName" class="form-label">Last Name *</label>
+                            <input type="text" class="form-control" id="lastName" name="entry.494220493" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="service" class="form-label">Service Interested In</label>
-                            <select class="form-select" id="service" name="service">
-                                <option value="" selected>Select a service</option>
-                                <option value="Drone/Camera Sales">Drone/Camera Sales</option>
-                                <option value="Repair Services">Repair Services</option>
-                                <option value="Aerial Services">Aerial Services</option>
-                                <option value="Training & Certification">Training & Certification</option>
-                                <option value="Equipment Rental">Equipment Rental</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mobile" class="form-label">Mobile Number *</label>
+               <input type="tel" class="form-control" id="mobile" name="entry.1840233604"
+                               pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="service" class="form-label">Service Interested In</label>
+                        <select class="form-select" id="service" name="entry.875856310">
+                            <option value="" selected>Select a service</option>
+                            <option value="Drone/Camera Sales">Drone/Camera Sales</option>
+                            <option value="Repair Services">Repair Services</option>
+                            <option value="Aerial Services">Aerial Services</option>
+                            <option value="Training & Certification">Training & Certification</option>
+                            <option value="Equipment Rental">Equipment Rental</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea class="form-control" id="message" name="entry.1120652643" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <!-- Hidden iframe prevents redirect -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      mode: 'no-cors'
+    }).then(() => {
+      alert('✅ Your response has been submitted successfully!');
+      this.reset();
+    }).catch((err) => {
+      console.error('Error submitting form!', err);
+      alert('❌ Something went wrong. Please try again.');
+    });
+  });
+</script>
+
     <!-- WhatsApp section -->
+<!-- Shop Now floating button (links to shop.html) -->
+<a href="shop.html" class="shop-float" title="Shop Now">
+    <i class="fas fa-shopping-bag"></i>
+</a>
+
+<!-- WhatsApp section -->
 <a href="https://wa.me/919597497474" target="_blank" 
      style="position: fixed; bottom: 20px; right: 20px; 
                     background-color: #d42027; color: #fff; 
@@ -1543,33 +832,6 @@
             document.querySelectorAll('.feature-card, .testimonial-card, .faq-item, .drone-image, .partner-logo').forEach(el => observer.observe(el));
         });
     </script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var form = document.getElementById('contactForm');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var data = {
-                "First Name": form.elements['firstName'].value,
-                "Last Name": form.elements['lastName'].value,
-                "Email": form.elements['email'].value,
-                "Service Interested": form.elements['service'].value,
-                "Message": form.elements['message'].value
-            };
-            fetch('https://script.google.com/macros/s/AKfycbzUOT9LU0BEYa7FM_dSxFSh604pSo5w3xy3Llc5tsVFEInUHkiMAUvZ92E6mltsR9q6/exec', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .then(res => res.text())
-            .then(msg => {
-                alert('Thank you! Your message has been sent.');
-                form.reset();
-            })
-            .catch(err => alert('Error submitting form.'));
-        });
-    }
-});
-</script>
+
 </body>
 </html>
