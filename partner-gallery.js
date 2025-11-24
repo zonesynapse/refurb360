@@ -38,4 +38,44 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  
+  // Also enable infinite scroll for main gallery containers (.gallery-scroll-container)
+  // Uses continuous RAF loop with modulo wrapping to avoid any pause on wrap
+  document.querySelectorAll('.gallery-scroll-container').forEach(function(container) {
+    const track = container.querySelector('.gallery-scroll-track');
+    if (!track) return;
+
+    // Clone gallery items for seamless loop (runtime clone keeps HTML unchanged)
+    const items = Array.from(track.children);
+    items.forEach(it => {
+      const clone = it.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    // Continuous RAF loop that keeps running; only skip scroll when paused
+    let scrollAmount = 1;
+    let running = true;
+
+    function smoothScroll() {
+      // RAF loop runs continuously; only update scroll if running is true
+      if (running) {
+        container.scrollLeft += scrollAmount;
+        const half = track.scrollWidth / 2 || 1;
+        // Use modulo to wrap seamlessly without visible pause
+        if (container.scrollLeft >= half) {
+          container.scrollLeft = container.scrollLeft % half;
+        }
+      }
+      requestAnimationFrame(smoothScroll);
+    }
+
+    requestAnimationFrame(smoothScroll);
+
+    // Pause on hover/touch, but RAF loop stays active for immediate resume
+    container.addEventListener('mouseenter', () => { running = false; });
+    container.addEventListener('mouseleave', () => { running = true; });
+    container.addEventListener('touchstart', () => { running = false; }, {passive: true});
+    container.addEventListener('touchend', () => { running = true; }, {passive: true});
+  });
 });
