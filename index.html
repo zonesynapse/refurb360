@@ -43,6 +43,54 @@
 </head>
 
 <body>
+    <!-- Floating Drone SVG for GSAP flight -->
+    <svg id="droneFlyer" class="drone-flyer" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+            <linearGradient id="droneBodyGrad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#bfc5cc"/>
+                <stop offset="100%" stop-color="#5c6670"/>
+            </linearGradient>
+            <radialGradient id="propBlur" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#bbb" stop-opacity=".7"/>
+                <stop offset="100%" stop-color="#bbb" stop-opacity="0"/>
+            </radialGradient>
+        </defs>
+        <!-- Arms -->
+        <g opacity=".9">
+            <rect x="35" y="47" width="90" height="6" rx="3" fill="#7a848f"/>
+            <rect x="78" y="12" width="6" height="76" rx="3" fill="#7a848f"/>
+        </g>
+        <!-- Body -->
+        <g>
+            <rect x="55" y="38" rx="10" ry="10" width="50" height="24" fill="url(#droneBodyGrad)"/>
+            <!-- LEDs -->
+            <circle class="led led-left" cx="60" cy="61" r="2" fill="#d42027"/>
+            <circle class="led led-right" cx="100" cy="61" r="2" fill="#3a86ff"/>
+            <!-- Camera/Gimbal -->
+            <circle cx="80" cy="66" r="6" fill="#0e0f10" stroke="#3a86ff" stroke-width="1.2"/>
+        </g>
+        <!-- Rotors with blur discs (4) -->
+        <g class="rotor rotor-front-left">
+            <circle cx="40" cy="30" r="14" fill="url(#propBlur)"/>
+            <rect x="28" y="29" width="24" height="2" fill="#d7dbe0"/>
+        </g>
+        <g class="rotor rotor-front-right">
+            <circle cx="120" cy="30" r="14" fill="url(#propBlur)"/>
+            <rect x="108" y="29" width="24" height="2" fill="#d7dbe0"/>
+        </g>
+        <g class="rotor rotor-back-left">
+            <circle cx="40" cy="82" r="14" fill="url(#propBlur)"/>
+            <rect x="28" y="81" width="24" height="2" fill="#d7dbe0"/>
+        </g>
+        <g class="rotor rotor-back-right">
+            <circle cx="120" cy="82" r="14" fill="url(#propBlur)"/>
+            <rect x="108" y="81" width="24" height="2" fill="#d7dbe0"/>
+        </g>
+        <!-- Spotlight beam (animated) -->
+        <polygon class="drone-spotlight" points="80,62 70,100 90,100" fill="rgba(255,255,210,0.18)"/>
+    </svg>
+
+    <!-- lightning overlay removed -->
         
     <!-- Coming Soon Launch Modal -->
     <div id="launchModal"
@@ -147,6 +195,14 @@
     ]
   },
   "areaServed": ["Coimbatore", "Tamil Nadu"],
+    "areaServed": [
+        "India",
+        "Chennai","Coimbatore","Bengaluru","Hyderabad","Mumbai","Pune","Delhi NCR","Kolkata","Ahmedabad","Jaipur",
+        "Bhopal","Lucknow","Chandigarh","Indore","Surat","Nagpur","Visakhapatnam","Patna","Ranchi","Guwahati",
+        "Tamil Nadu","Karnataka","Telangana","Kerala","Andhra Pradesh","Maharashtra","Gujarat","Rajasthan",
+        "Madhya Pradesh","Uttar Pradesh","West Bengal","Bihar","Jharkhand","Odisha","Punjab","Haryana","Assam",
+        "Uttarakhand","Himachal Pradesh"
+    ],
   "sameAs": [
     "https://www.youtube.com/@refurb360",
     "https://www.instagram.com/refurb360/",
@@ -190,12 +246,12 @@
                 <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
-        <!-- </div>
+        </div>
          <a href="shop.html" class="shop-float-mobile shop-icon-desktop">
             <i class="fas fa-shopping-bag"></i>
         </a>
 
-    </div> -->
+    </div>
 </nav>
 
 
@@ -247,114 +303,94 @@
         </script>
 
     <!-- Partners Section -->
-    <section id="partners" class="section-padding bg-light section-animate">
+    <section id="partners" class="section-padding section-animate section-unified">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Our Partners</h2>
                 <p class="lead">We collaborate with industry leaders to bring you the best products and services</p>
             </div>
-            <div class="partner-logo-gallery-list"
-                style="display: flex; flex-direction: column; gap: 48px; align-items: center;">
+            <div class="partner-logo-gallery-list" style="display: flex; flex-direction: column; gap: 48px; align-items: center;">
                 <div class="text-center partner-logo-gallery-item">
-                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="partner-logo mb-2"
-                        alt="DJI certified drones — Refurb 360 partner"
-                        style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <img src="tie-up logo/brand-dji-svgrepo-com.svg" class="partner-logo mb-2" alt="DJI certified drones — Refurb 360 partner" style="height:80px;max-width:160px;display:block;margin:0 auto;">
                     <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
-                        <img src="assets/img/dji/dji1.jpg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 1" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji2.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 2" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji3.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 3" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji4.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 4" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji5.png"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 5" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji6.png"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 6" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji7.png"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 7" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji8.png"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 8" class="partner-gallery-img">
-                        <img src="assets/img/dji/dji9.png"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="DJI 9" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=11R4PNAUrYNjHlO64kUWwK9hjKArm7tbL&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 1" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=11WankOB-6wYCYuzuv5yYVXDuO7q9zqlW&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 2" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=11GmyyX0FCxnc6BHBQ29zAAvCZXqxMUqW&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 3" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1wHcehGCjvG2fh8IdgdKW8rrZogWdJwgx&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 4" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=13jnQYWnsvMCTMkuO6w0Qm_9LpY6JLz4z&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 5" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1Pso9JKWWQXY6Pc5ABog_byVp47dwzCHz&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 6" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1NqvrrB0DsrxA6W0DhYDBedFPjpfKcqH3&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 7" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1K1mH8PZskLj5JKMGUz8e18ZhBJZvG_SW&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 8" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1uECQBXS_UkTV3oWklpw-HXm02BD83wsC&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 9" class="partner-gallery-img">
                         <!-- <img src="assets/img/portfolio/product-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="DJI 10" class="partner-gallery-img"> -->
+                    </div>
+                    <div class="partner-seo partner-seo--media" style="max-width:880px;margin:18px auto 0;line-height:1.6;">
+                        <div class="partner-text">
+                            Looking for DJI in India? Refurb360 is a trusted DJI dealer and authorized service partner based in Coimbatore. Whether you want to buy DJI drones in India, locate certified DJI dealers across India, or get professional DJI drone repairs and genuine spare parts, Refurb360 offers expert support, fast turnaround and competitive pricing. Search "DJI in India" or "Buy DJI in India"—customers trust Refurb360 for authentic DJI products, warranty service and reliable after-sales care. <a href="#contact" class="text-primary">Request service</a>.
+                            <!-- <a href="shop.html" class="text-primary">Shop DJI</a> or  -->
+                        </div>
+                        <div class="partner-video">
+                            <iframe src="https://www.youtube-nocookie.com/embed/XI7nlAaf4iA?rel=0&modestbranding=1" title="DJI Product Overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                        </div>
                     </div>
                 </div>
                 <div class="text-center partner-logo-gallery-item">
-                    <img src="tie-up logo/gopro-seeklogo.svg" class="partner-logo mb-2"
-                        alt="GoPro action cameras — Refurb 360 partner"
-                        style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <img src="tie-up logo/gopro-seeklogo.svg" class="partner-logo mb-2" alt="GoPro action cameras — Refurb 360 partner" style="height:80px;max-width:160px;display:block;margin:0 auto;">
                     <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
-                        <img src="assets/img/gopro/gopro1.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 1" class="partner-gallery-img">
-                        <img src="assets/img/gopro/gopro2.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 2" class="partner-gallery-img">
-                        <img src="assets/img/gopro/gopro3.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 3" class="partner-gallery-img">
-                        <img src="assets/img/gopro/gopro4.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 4" class="partner-gallery-img">
-                        <img src="assets/img/gopro/gopro5.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 5" class="partner-gallery-img">
-                        <img src="assets/img/gopro/gopro6.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 6" class="partner-gallery-img">
-                        <img src="assets/img/gopro/gopro7.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 7" class="partner-gallery-img">
-                        <img src="assets/img/gopro/gopro8.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="GoPro 8" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1_gC_VPxUBsQvmUSRZL1PNdJzTYug76DA&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 1" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1tRwQ-9IB2C4fuvWQ23bVR0hSqIHkWoef&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 2" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1bAEBi0fWZCnoymsaZYYkaOnYuA-VyxyZ&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 3" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1BAsZnd7fAA8XpfxwDLQoIOuM3XIwj_pZ&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 4" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1izjH7fUvEzxj6D5R3O0ItyLerOn11o3Z&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 5" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1gSfHVWpSabiDPVn2sXCW61-gALSACX7E&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 6" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1qQaklbRANBY0ixDr7XD8w9BqRWU-NqXF&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 7" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1pxuwp1koD20Yos4xtiR4ro975vmLkVvO&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 8" class="partner-gallery-img">
                         <!-- <img src="assets/img/portfolio/books-1.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 9" class="partner-gallery-img">
                         <img src="assets/img/portfolio/books-2.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="GoPro 10" class="partner-gallery-img"> -->
                     </div>
+                    <div class="partner-seo partner-seo--media" style="max-width:880px;margin:18px auto 0;line-height:1.6;">
+                        <div class="partner-text" style="color:#333;">
+                            Searching for GoPro in India? Refurb360 supplies new and certified refurbished GoPro action cameras, accessories and repair services from our Coimbatore workshop. If you type "GoPro in India" or "Buy GoPro in India", you'll find customers choosing Refurb360 for genuine parts, experienced GoPro technicians, battery and lens replacements, and quick turnarounds. We support adventure filmmakers and enthusiasts with setup, firmware updates and warranty-safe repairs. <a href="#contact" class="text-primary">Get repair quote</a>.
+                            <!-- <a href="shop.html" class="text-primary">Shop GoPro</a> or  -->
+                        </div>
+                        <div class="partner-video">
+                            <iframe src="https://www.youtube-nocookie.com/embed/BthRux_AT3I?rel=0&modestbranding=1&controls=1"
+                                title="GoPro — Refurb360"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
                 <div class="text-center partner-logo-gallery-item">
-                    <img src="tie-up logo/Insta360_logo_(transparent).svg.png" class="partner-logo mb-2"
-                        alt="Insta360 Logo" style="height:80px;max-width:160px;display:block;margin:0 auto;">
+                    <img src="https://drive.google.com/thumbnail?id=18GT1Gq3KC3clp9my4DDiNMmlnlYXgIF5&sz=w1000" class="partner-logo mb-2" alt="Insta360 Logo" style="height:80px;max-width:190px;display:block;margin:0 auto;">
                     <div class="partner-gallery-scroll" style="overflow-x:auto;white-space:nowrap;padding:8px 0 2px 0;">
-                        <img src="assets/img/insta 360/insta3601.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 1" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3602.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 2" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3603.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 3" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3604.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 4" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3605.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 5" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3606.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 6" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3607.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 7" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3608.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 8" class="partner-gallery-img">
-                        <img src="assets/img/insta 360/insta3609.jpeg"
-                            style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;"
-                            alt="Insta360 9" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1lvyOcDamAriZwHmfh9ZJaiaq8dgeM79i&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 1" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1dz0tfKU_CMjR6-C-dVPS3Ht9pH6HZQ6c&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 2" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1-CDM2QKI5BgwH9RVHfTrro3LpfYvi8z7&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 3" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1-CTKySGH4q91XCI-usjrwNg7cTn41WKB&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 4" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1I_i3NS5Frfd3qYJp3wrrt-ZF83PXX2Zw&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 5" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1fg2zRLsUA-V70d9O2v14nANSVxyshydn&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 6" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1yUBbxkugaeP9T2vIQ-AJRok8E9x8tX2S&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 7" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=1lDgrKukQM-qazfcBX_RgdaRg1bSJQLeA&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 8" class="partner-gallery-img">
+                        <img src="https://drive.google.com/thumbnail?id=127BEdWPX7NsXIyQWTVG_3ZSsyPyiqB_f&sz=w1000" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 9" class="partner-gallery-img">
                         <!-- <img src="assets/img/portfolio/branding-3.jpg" style="height:150px;width:auto;margin-right:16px;display:inline-block;cursor:pointer;" alt="Insta360 10" class="partner-gallery-img"> -->
+                    </div>
+                    <div class="partner-seo partner-seo--media" style="max-width:880px;margin:18px auto 0;line-height:1.6;">
+                        <div class="partner-text" style="color:#333;">
+                            Want Insta360 in India? Refurb360 stocks Insta360 cameras and accessories with professional setup, calibration and on-site support. For searches like "Insta360 India" or "Buy Insta360 in India", Refurb360 stands out for authentic products, firmware support and fast repairs from our Coimbatore centre. Get expert advice, demo units and nationwide shipping for Insta360 cameras and accessories. <a href="#contact" class="text-primary">Talk to an expert</a>.
+                            <!-- <a href="shop.html" class="text-primary">Shop Insta360</a> or  -->
+                        </div>
+                        <div class="partner-video">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/LGWSDinbry8?rel=0&modestbranding=1&controls=1"
+                                title="Insta360 — Refurb360"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
                 <!-- <div class="text-center partner-logo-gallery-item">
@@ -376,6 +412,76 @@
         </div>
     </section>
     <script src="partner-gallery.js"></script>
+    <!-- Service Areas in India -->
+    <section id="service-areas" class="section-padding section-animate section-unified">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Service Areas in India</h2>
+                <p class="lead">Buy or service DJI, GoPro & Insta360 — nationwide support from Refurb360</p>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-10 mx-auto">
+                    <p style="color:#333;line-height:1.7;">Searching for the best DJI dealer in Chennai, Coimbatore, Pune, Mumbai, Delhi, Bengaluru, Hyderabad or anywhere in India? Refurb360 supplies genuine DJI drones, Insta360 & GoPro cameras, accessories, and offers expert repairs with fast turnarounds. We provide consulting, demos and shipping across India. Contact us for sales, service and refurbishment.</p>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <h3 class="h5">Major Metros & Cities</h3>
+                            <ul class="list-unstyled small" style="columns:2;column-gap:24px;">
+                                <li>Chennai, Tamil Nadu</li>
+                                <li>Coimbatore, Tamil Nadu</li>
+                                <li>Bengaluru, Karnataka</li>
+                                <li>Hyderabad, Telangana</li>
+                                <li>Mumbai, Maharashtra</li>
+                                <li>Pune, Maharashtra</li>
+                                <li>Delhi NCR</li>
+                                <li>Kolkata, West Bengal</li>
+                                <li>Ahmedabad, Gujarat</li>
+                                <li>Jaipur, Rajasthan</li>
+                                <li>Bhopal, Madhya Pradesh</li>
+                                <li>Lucknow, Uttar Pradesh</li>
+                                <li>Chandigarh</li>
+                                <li>Indore, Madhya Pradesh</li>
+                                <li>Surat, Gujarat</li>
+                                <li>Nagpur, Maharashtra</li>
+                                <li>Visakhapatnam, Andhra Pradesh</li>
+                                <li>Patna, Bihar</li>
+                                <li>Ranchi, Jharkhand</li>
+                                <li>Guwahati, Assam</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="h5">States & Regions</h3>
+                            <ul class="list-unstyled small" style="columns:2;column-gap:24px;">
+                                <li>Tamil Nadu</li>
+                                <li>Karnataka</li>
+                                <li>Telangana</li>
+                                <li>Kerala</li>
+                                <li>Andhra Pradesh</li>
+                                <li>Maharashtra</li>
+                                <li>Gujarat</li>
+                                <li>Rajasthan</li>
+                                <li>Madhya Pradesh</li>
+                                <li>Uttar Pradesh</li>
+                                <li>Delhi NCR</li>
+                                <li>West Bengal</li>
+                                <li>Bihar</li>
+                                <li>Jharkhand</li>
+                                <li>Odisha</li>
+                                <li>Punjab</li>
+                                <li>Haryana</li>
+                                <li>Assam</li>
+                                <li>Uttarakhand</li>
+                                <li>Himachal Pradesh</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <!-- <a href="shop.html" class="btn btn-sm btn-outline-primary me-2">Shop DJI / GoPro / Insta360</a> -->
+                        <a href="#contact" class="btn btn-sm btn-primary">Get Service Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Modal for full image view -->
     <div id="partnerGalleryModal"
         style="display:none;position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
@@ -418,7 +524,7 @@
     </script>
 
     <!-- Services Section -->
-    <section id="services" class="section-padding section-animate">
+    <section id="services" class="section-padding section-animate section-unified">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Our Services</h2>
@@ -496,7 +602,7 @@
     </section>
 
     <!-- Our Gallery Section -->
-    <section id="gallery" class="section-padding bg-light section-animate">
+    <section id="gallery" class="section-padding section-animate section-unified">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Our Gallery</h2>
@@ -528,7 +634,7 @@
     </section>
 
     <!-- Client Gallery Section -->
-    <section id="client-gallery" class="section-padding bg-light section-animate">
+    <section id="client-gallery" class="section-padding section-animate section-unified">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Client Gallery</h2>
@@ -537,31 +643,31 @@
             <div class="gallery-scroll-container mt-5">
                 <div class="gallery-scroll-track">
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM.jpeg" alt="Aerial landscape">
+                        <img src="https://drive.google.com/thumbnail?id=14GjcAly4J0d8HrpbuDmBtdvnspZEc_g9&sz=w1000" alt="Aerial landscape">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM(1).jpeg" alt="Drone flat lay">
+                        <img src="https://drive.google.com/thumbnail?id=18e0ksxZNRyGJCeKH9ovGQWtHo78dhMZM&sz=w1000" alt="Drone flat lay">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.57 PM.jpeg" alt="Action shot">
+                        <img src="https://drive.google.com/thumbnail?id=1A0VsWXm1U9Gz466XNAg8JCHV2m_DysNk&sz=w1000" alt="Action shot">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.58 PM.jpeg" alt="Action shot">
+                        <img src="https://drive.google.com/thumbnail?id=1Bed-XI64xvkYU83NbTyVFExt4PxTR2vw&sz=w1000" alt="Action shot">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM.jpeg" alt="Action shot">
+                        <img src="https://drive.google.com/thumbnail?id=1pIttZi6D5-6cnqIoudvFTjAHwF7xHG9d&sz=w1000" alt="Action shot">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.36.59 PM(1).jpeg" alt="Action shot">
+                        <img src="https://drive.google.com/thumbnail?id=1TxbmWuSWsBRM8GSxZG8cisQhL3RsE42e&sz=w1000" alt="Action shot">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.00 PM.jpeg" alt="Action shot">
+                        <img src="https://drive.google.com/thumbnail?id=1Mrfn--dzJ7So7lrLBhI1uIpidHGscI0Q&sz=w1000" alt="Action shot">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.01 PM(1).jpeg" alt="Action shot">
+                        <img src="https://drive.google.com/thumbnail?id=10zQ2oNVcvt0qp9a5suRAiOtA7dxxFuy-&sz=w1000" alt="Action shot">
                     </div>
                     <div class="gallery-item">
-                        <img src="client gallary/WhatsApp Image 2025-09-08 at 10.37.02 PM.jpeg" alt="Action shot">
+                        <img src="https://drive.google.com/thumbnail?id=1ARe9XcRFVao4XkvoBHgSgd22R5QOqHku&sz=w1000" alt="Action shot">
                     </div>
                 </div>
             </div>
@@ -585,7 +691,7 @@
     </script>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section-padding section-animate">
+    <section id="faq" class="section-padding section-animate section-unified">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Frequently Asked Questions</h2>
@@ -682,7 +788,7 @@
     </section>
 
    <!-- Contact Section -->
-<section id="contact" class="section-padding section-animate">
+<section id="contact" class="section-padding section-animate section-unified">
     <div class="container">
         <div class="text-center">
             <h2 class="section-title">Contact Us</h2>
@@ -868,6 +974,119 @@
 
     <!-- Bootstrap & JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP and Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+    <script>
+        // GSAP animations: drone flight, parallax, scroll reveals, hover tilt, light sweep
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!window.gsap) return;
+            gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+            // Light sweep on section titles
+            document.querySelectorAll('.section-title').forEach((el) => el.classList.add('light-sweep'));
+            gsap.utils.toArray('.section-title').forEach((title) => {
+                ScrollTrigger.create({
+                    trigger: title,
+                    start: 'top 80%',
+                    once: true,
+                    onEnter: () => {
+                        gsap.fromTo(title, {opacity:0, y:20}, {opacity:1, y:0, duration:0.6, ease:'power2.out'});
+                        gsap.fromTo(title, { '--sweepX': -150 }, { '--sweepX': 150, duration:1.2, ease:'power2.inOut', onUpdate: function(){
+                            // move pseudo via CSS var by updating transform through style is not direct; animate :after via CSS animation fallback below
+                        }});
+                        // Fallback: animate :after by nudging background position using a child div overlay approach (quick flash effect)
+                        const sweep = document.createElement('span');
+                        sweep.style.position='absolute';
+                        sweep.style.inset='0';
+                        sweep.style.pointerEvents='none';
+                        sweep.style.background='linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0) 90%)';
+                        sweep.style.transform='skewX(-20deg) translateX(-150%)';
+                        title.appendChild(sweep);
+                        gsap.to(sweep, { x:'250%', duration:1.2, ease:'power2.inOut', onComplete: ()=> sweep.remove() });
+                    }
+                });
+            });
+
+            // Section and element reveals
+            gsap.utils.toArray('.section-animate').forEach((sec) => {
+                gsap.fromTo(sec, {opacity:0, y:40, scale:0.98}, {
+                    opacity:1, y:0, scale:1, duration:0.4, ease:'power2.out',
+                    scrollTrigger: { trigger: sec, start: 'top 80%', once: true }
+                });
+            });
+            gsap.utils.toArray('.feature-card, .testimonial-card, .faq-item, .drone-image, .partner-logo').forEach((el) => {
+                gsap.fromTo(el, {opacity:0, y:24}, {opacity:1, y:0, duration:0.35, ease:'power2.out',
+                    scrollTrigger: {trigger: el, start:'top 85%', once:true}
+                });
+            });
+
+            // Hero parallax
+            const hero = document.querySelector('.hero-section');
+            if (hero) {
+                gsap.to(hero, { backgroundPositionY: '20%', ease:'none',
+                    scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true }
+                });
+            }
+
+            // Drone flight path across the screen with subtle 3D tilt
+            const drone = document.getElementById('droneFlyer');
+            if (drone) {
+                const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.8 });
+                // fade in
+                tl.to(drone, { autoAlpha: 1, duration: 0.6, ease: 'power2.out' });
+                // flight in a gentle arc
+                tl.to(drone, {
+                    duration: 7.5,
+                    ease: 'power1.inOut',
+                    motionPath: {
+                        path: [ {x:-160, y:0}, {x: window.innerWidth*0.28, y:-40}, {x: window.innerWidth*0.6, y:18}, {x: window.innerWidth*0.82, y:-26}, {x: window.innerWidth+200, y:-8} ],
+                        autoRotate: false
+                    },
+                    onUpdate: function(){
+                        const prog = this.progress();
+                        const tilt = gsap.utils.mapRange(0,1,-10,10, Math.sin(prog*Math.PI*2));
+                        gsap.set(drone, { rotateZ: tilt, yPercent: Math.sin(prog*Math.PI*2)*2 });
+                        // spotlight pulsing
+                        gsap.set('#droneFlyer .drone-spotlight', { opacity: 0.12 + Math.abs(Math.sin(prog*Math.PI*2))*0.12 });
+                    }
+                });
+                // reset to start off-screen
+                tl.set(drone, { x: -160, clearProps: 'yPercent,rotateZ' });
+                // rotor spin
+                gsap.to('#droneFlyer .rotor rect', { rotate: 360, transformOrigin: 'center', duration: 0.4, repeat: -1, ease: 'none' });
+
+                // Pause flight when not near top third (performance)
+                ScrollTrigger.create({
+                    start: 0, end: () => window.innerHeight * 2,
+                    onEnter: () => tl.play(), onLeave: () => tl.pause(), onEnterBack: () => tl.play(), onLeaveBack: () => tl.pause()
+                });
+            }
+
+            // Lightning effects removed — flash/bolt scheduling code was here
+
+            // 3D-like hover tilt on cards (desktop only)
+            if (window.matchMedia('(pointer:fine)').matches) {
+                const tiltTargets = document.querySelectorAll('.feature-card, .partner-seo');
+                tiltTargets.forEach((card) => {
+                    let ctx = gsap.context(() => {
+                        const bounds = card.getBoundingClientRect();
+                        function handleMove(e){
+                            const r = card.getBoundingClientRect();
+                            const cx = e.clientX - r.left; const cy = e.clientY - r.top;
+                            const rx = ((cy / r.height) - 0.5) * -8; // tilt X
+                            const ry = ((cx / r.width) - 0.5) * 8;   // tilt Y
+                            gsap.to(card, { rotateX: rx, rotateY: ry, transformPerspective: 800, transformStyle: 'preserve-3d', duration: 0.2 });
+                        }
+                        function reset(){ gsap.to(card, { rotateX:0, rotateY:0, duration:0.3, ease:'power2.out' }); }
+                        card.addEventListener('mousemove', handleMove);
+                        card.addEventListener('mouseleave', reset);
+                    }, card);
+                });
+            }
+        });
+    </script>
     <script>
         // Navbar scroll effect
 
