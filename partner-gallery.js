@@ -78,4 +78,37 @@ document.addEventListener('DOMContentLoaded', function() {
     container.addEventListener('touchstart', () => { running = false; }, {passive: true});
     container.addEventListener('touchend', () => { running = true; }, {passive: true});
   });
+
+  // Enable infinite scroll for customer reviews (.reviews-scroll-container)
+  document.querySelectorAll('.reviews-scroll-container').forEach(function(container) {
+    const track = container.querySelector('.reviews-scroll-track');
+    if (!track) return;
+
+    const items = Array.from(track.children);
+    items.forEach(it => {
+      const clone = it.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    let scrollAmount = 1;
+    let running = true;
+
+    function smoothScroll() {
+      if (running) {
+        container.scrollLeft += scrollAmount;
+        const half = track.scrollWidth / 2 || 1;
+        if (container.scrollLeft >= half) {
+          container.scrollLeft = container.scrollLeft % half;
+        }
+      }
+      requestAnimationFrame(smoothScroll);
+    }
+
+    requestAnimationFrame(smoothScroll);
+    container.addEventListener('mouseenter', () => { running = false; });
+    container.addEventListener('mouseleave', () => { running = true; });
+    container.addEventListener('touchstart', () => { running = false; }, {passive: true});
+    container.addEventListener('touchend', () => { running = true; }, {passive: true});
+  });
 });
